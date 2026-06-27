@@ -334,11 +334,11 @@ const selectedImportance = useMemo(() => {
     displayPos === "C" ? "G" :
     "F";
 
-  const rows = importance
+  const rawRows = importance
     .filter((x) => String(x.position).trim().toUpperCase() === importancePos)
     .map((x) => ({
       feature: cleanFeatureName(x.feature),
-      importance: Number(
+      rawImportance: Number(
         x.importance ??
           x.feature_importance ??
           x.mean_abs_shap ??
@@ -346,24 +346,38 @@ const selectedImportance = useMemo(() => {
           0
       ),
     }))
-    .filter((x) => Number.isFinite(x.importance) && x.importance > 0)
-    .sort((a, b) => b.importance - a.importance)
+    .filter((x) => Number.isFinite(x.rawImportance) && x.rawImportance > 0)
+    .sort((a, b) => b.rawImportance - a.rawImportance)
     .slice(0, 12);
 
-  if (rows.length > 0) return rows;
+  if (rawRows.length > 0) {
+    const maxImportance = Math.max(...rawRows.map((x) => x.rawImportance));
 
-  return [
-    { feature: "points per game", importance: selected?.points_per_game ?? 0 },
-    { feature: "rebounds per game", importance: selected?.rebounds_per_game ?? 0 },
-    { feature: "assists per game", importance: selected?.assists_per_game ?? 0 },
-    { feature: "steals per game", importance: selected?.steals_per_game ?? 0 },
-    { feature: "blocks per game", importance: selected?.blocks_per_game ?? 0 },
-    { feature: "usage rate", importance: selected?.usage_rate ?? 0 },
+    return rawRows.map((x) => ({
+      feature: x.feature,
+      importance: maxImportance > 0 ? Number((x.rawImportance / maxImportance).toFixed(3)) : 0,
+    }));
+  }
+
+  const fallbackRows = [
+    { feature: "points per game", rawImportance: selected?.points_per_game ?? 0 },
+    { feature: "rebounds per game", rawImportance: selected?.rebounds_per_game ?? 0 },
+    { feature: "assists per game", rawImportance: selected?.assists_per_game ?? 0 },
+    { feature: "steals per game", rawImportance: selected?.steals_per_game ?? 0 },
+    { feature: "blocks per game", rawImportance: selected?.blocks_per_game ?? 0 },
+    { feature: "usage rate", rawImportance: selected?.usage_rate ?? 0 },
     {
       feature: "recruiting rank signal",
-      importance: selected?.recruiting_rank ? 101 - selected.recruiting_rank : 0,
+      rawImportance: selected?.recruiting_rank ? 101 - selected.recruiting_rank : 0,
     },
-  ].filter((x) => x.importance > 0);
+  ].filter((x) => x.rawImportance > 0);
+
+  const maxFallback = Math.max(...fallbackRows.map((x) => x.rawImportance));
+
+  return fallbackRows.map((x) => ({
+    feature: x.feature,
+    importance: maxFallback > 0 ? Number((x.rawImportance / maxFallback).toFixed(3)) : 0,
+  }));
 }, [importance, selected]);
 
   const manualProjection = useMemo(() => {
@@ -645,14 +659,14 @@ const selectedImportance = useMemo(() => {
                         margin={{ top: 10, right: 24, left: 30, bottom: 10 }}
                       >
                         <CartesianGrid strokeDasharray="3 3" />
-                        <XAxis type="number" tick={{ fontSize: 12 }} />
+                        <XAxis type="number" domain={[0, 1]} tick={{ fontSize: 12 }} />
                         <YAxis
                           dataKey="feature"
                           type="category"
                           width={135}
                           tick={{ fontSize: 12 }}
                         />
-                        <Tooltip />
+                        <Tooltip formatter={(value) => Number(value).toFixed(2)} />
                         <Bar dataKey="importance" radius={[0, 8, 8, 0]} />
                       </BarChart>
                     </ResponsiveContainer>
