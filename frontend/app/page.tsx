@@ -163,9 +163,13 @@ function SectionTitle({
 
 function Stat({ label, value }: { label: string; value: string | number }) {
   return (
-    <div className="min-w-[96px] rounded-2xl bg-slate-100 px-5 py-4 text-center">
-      <div className="text-xs font-medium uppercase tracking-wide text-slate-500">{label}</div>
-      <div className="mt-1 text-xl font-semibold text-slate-950">{value}</div>
+    <div className="flex min-h-[92px] w-full flex-col items-center justify-center rounded-2xl bg-slate-100 px-3 py-4 text-center">
+      <div className="text-[11px] font-semibold uppercase tracking-wide text-slate-500">
+        {label}
+      </div>
+      <div className="mt-2 text-2xl font-semibold leading-none text-slate-950">
+        {value}
+      </div>
     </div>
   );
 }
@@ -564,7 +568,7 @@ const selectedImportance = useMemo(() => {
                 <div className="flex flex-col gap-6 md:flex-row md:items-center">
                   <Headshot prospect={selected} />
 
-                  <div className="flex-1">
+                  <div className="min-w-0 flex-1">
                     <div className="text-sm font-medium text-slate-500">
                       Prospect rank #{selected.espn_rank}
                     </div>
@@ -573,7 +577,7 @@ const selectedImportance = useMemo(() => {
                       {selected.position} · {selected.college_team ?? "Unknown"} · {selected.conference ?? "Unknown"}
                     </p>
 
-                    <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3 xl:grid-cols-6">
+                    <div className="mt-5 grid w-full grid-cols-2 gap-3 sm:grid-cols-3 2xl:grid-cols-6">
                       <Stat label="PPG" value={num(selected.points_per_game)} />
                       <Stat label="RPG" value={num(selected.rebounds_per_game)} />
                       <Stat label="APG" value={num(selected.assists_per_game)} />
