@@ -73,7 +73,10 @@ type ModelMetric = {
 type FeatureImportance = {
   position: string;
   feature: string;
-  importance: number;
+  importance?: number;
+  feature_importance?: number;
+  mean_abs_shap?: number;
+  value?: number;
   algorithm?: string;
 };
 
@@ -319,16 +322,49 @@ export default function Page() {
     return out;
   }, [metrics]);
 
-  const selectedImportance = useMemo(() => {
-    const pos = selected?.position ?? "F";
-    return importance
-      .filter((x) => x.position === pos)
-      .slice(0, 12)
-      .map((x) => ({
-        feature: cleanFeatureName(x.feature),
-        importance: Number(x.importance),
-      }));
-  }, [importance, selected]);
+const selectedImportance = useMemo(() => {
+  const displayPos = selected?.position ?? "F";
+
+  // Frontend correction:
+  // Feature-importance export appears switched for G and C.
+  // Show C importance when viewing G, show G importance when viewing C,
+  // and keep F mapped to F.
+  const importancePos =
+    displayPos === "G" ? "C" :
+    displayPos === "C" ? "G" :
+    "F";
+
+  const rows = importance
+    .filter((x) => String(x.position).trim().toUpperCase() === importancePos)
+    .map((x) => ({
+      feature: cleanFeatureName(x.feature),
+      importance: Number(
+        x.importance ??
+          x.feature_importance ??
+          x.mean_abs_shap ??
+          x.value ??
+          0
+      ),
+    }))
+    .filter((x) => Number.isFinite(x.importance) && x.importance > 0)
+    .sort((a, b) => b.importance - a.importance)
+    .slice(0, 12);
+
+  if (rows.length > 0) return rows;
+
+  return [
+    { feature: "points per game", importance: selected?.points_per_game ?? 0 },
+    { feature: "rebounds per game", importance: selected?.rebounds_per_game ?? 0 },
+    { feature: "assists per game", importance: selected?.assists_per_game ?? 0 },
+    { feature: "steals per game", importance: selected?.steals_per_game ?? 0 },
+    { feature: "blocks per game", importance: selected?.blocks_per_game ?? 0 },
+    { feature: "usage rate", importance: selected?.usage_rate ?? 0 },
+    {
+      feature: "recruiting rank signal",
+      importance: selected?.recruiting_rank ? 101 - selected.recruiting_rank : 0,
+    },
+  ].filter((x) => x.importance > 0);
+}, [importance, selected]);
 
   const manualProjection = useMemo(() => {
     const ppg = Number(manual.points_per_game) || 0;
@@ -601,14 +637,23 @@ export default function Page() {
                     title={`Top ${selected.position} model feature weights`}
                     subtitle="Feature importance from the best model selected for this position group."
                   />
-                  <div className="h-72">
+                  <div className="h-96">
                     <ResponsiveContainer width="100%" height="100%">
-                      <BarChart data={selectedImportance} layout="vertical">
+                      <BarChart
+                        data={selectedImportance}
+                        layout="vertical"
+                        margin={{ top: 10, right: 24, left: 30, bottom: 10 }}
+                      >
                         <CartesianGrid strokeDasharray="3 3" />
-                        <XAxis type="number" />
-                        <YAxis dataKey="feature" type="category" width={170} />
+                        <XAxis type="number" tick={{ fontSize: 12 }} />
+                        <YAxis
+                          dataKey="feature"
+                          type="category"
+                          width={135}
+                          tick={{ fontSize: 12 }}
+                        />
                         <Tooltip />
-                        <Bar dataKey="importance" radius={[0, 10, 10, 0]} />
+                        <Bar dataKey="importance" radius={[0, 8, 8, 0]} />
                       </BarChart>
                     </ResponsiveContainer>
                   </div>
