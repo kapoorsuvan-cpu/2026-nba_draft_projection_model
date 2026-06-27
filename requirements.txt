@@ -1,0 +1,14 @@
+pandas>=2.0
+numpy>=1.24
+scikit-learn>=1.3
+requests>=2.31
+beautifulsoup4>=4.12
+rapidfuzz>=3.5
+joblib>=1.3
+matplotlib>=3.7
+python-dotenv>=1.0
+nba_api>=1.4
+cbbd>=1.27.3
+shap>=0.44
+xgboost>=2.0
+lightgbm>=4.0

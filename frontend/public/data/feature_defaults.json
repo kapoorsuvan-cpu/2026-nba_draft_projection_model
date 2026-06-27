@@ -1,0 +1,158 @@
+{
+  "G": {
+    "points_per_game": {
+      "median": 16.333,
+      "min": 10.943,
+      "max": 23.472
+    },
+    "rebounds_per_game": {
+      "median": 3.838,
+      "min": 2.333,
+      "max": 7.556
+    },
+    "assists_per_game": {
+      "median": 3.0,
+      "min": 0.794,
+      "max": 8.821
+    },
+    "steals_per_game": {
+      "median": 1.242,
+      "min": 0.543,
+      "max": 2.788
+    },
+    "blocks_per_game": {
+      "median": 0.242,
+      "min": 0.0,
+      "max": 1.324
+    },
+    "minutes_per_game": {
+      "median": 31.529,
+      "min": 28.289,
+      "max": 38.394
+    },
+    "usage_rate": {
+      "median": 24.8,
+      "min": 15.1,
+      "max": 33.5
+    },
+    "recruiting_rank": {
+      "median": 55.5,
+      "min": 1.0,
+      "max": 99.0
+    },
+    "recruiting_rating": {
+      "median": 0.946,
+      "min": 0.902,
+      "max": 1.0
+    },
+    "recruiting_stars": {
+      "median": 4.0,
+      "min": 3.0,
+      "max": 5.0
+    }
+  },
+  "F": {
+    "points_per_game": {
+      "median": 14.338,
+      "min": 4.947,
+      "max": 25.543
+    },
+    "rebounds_per_game": {
+      "median": 6.887,
+      "min": 3.946,
+      "max": 11.767
+    },
+    "assists_per_game": {
+      "median": 2.2,
+      "min": 0.609,
+      "max": 4.771
+    },
+    "steals_per_game": {
+      "median": 0.898,
+      "min": 0.304,
+      "max": 1.886
+    },
+    "blocks_per_game": {
+      "median": 0.827,
+      "min": 0.216,
+      "max": 2.438
+    },
+    "minutes_per_game": {
+      "median": 29.859,
+      "min": 20.237,
+      "max": 35.636
+    },
+    "usage_rate": {
+      "median": 24.15,
+      "min": 12.4,
+      "max": 34.0
+    },
+    "recruiting_rank": {
+      "median": 46.0,
+      "min": 2.0,
+      "max": 100.0
+    },
+    "recruiting_rating": {
+      "median": 0.955,
+      "min": 0.901,
+      "max": 0.999
+    },
+    "recruiting_stars": {
+      "median": 4.0,
+      "min": 3.0,
+      "max": 5.0
+    }
+  },
+  "C": {
+    "points_per_game": {
+      "median": 12.075,
+      "min": 5.0,
+      "max": 17.032
+    },
+    "rebounds_per_game": {
+      "median": 7.487,
+      "min": 4.889,
+      "max": 9.121
+    },
+    "assists_per_game": {
+      "median": 1.69,
+      "min": 0.486,
+      "max": 2.56
+    },
+    "steals_per_game": {
+      "median": 0.6,
+      "min": 0.35,
+      "max": 1.793
+    },
+    "blocks_per_game": {
+      "median": 1.457,
+      "min": 0.657,
+      "max": 2.889
+    },
+    "minutes_per_game": {
+      "median": 27.31,
+      "min": 16.5,
+      "max": 31.387
+    },
+    "usage_rate": {
+      "median": 21.1,
+      "min": 9.6,
+      "max": 27.8
+    },
+    "recruiting_rank": {
+      "median": 48.0,
+      "min": 10.0,
+      "max": 91.0
+    },
+    "recruiting_rating": {
+      "median": 0.953,
+      "min": 0.91,
+      "max": 0.991
+    },
+    "recruiting_stars": {
+      "median": 4.0,
+      "min": 3.0,
+      "max": 5.0
+    }
+  }
+}

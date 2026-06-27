@@ -1,0 +1,36 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Node / Next / Vercel
+node_modules/
+.next/
+.vercel/
+frontend/node_modules/
+frontend/.next/
+frontend/.vercel/
+frontend/out/
+frontend/.env*
+
+# Large model/data folders not needed by Vercel frontend
+data/
+models/
+reports/
+
+# Keep frontend public dashboard data
+!frontend/public/
+!frontend/public/data/
+!frontend/public/data/*.json
+!frontend/public/data/*.csv
+
+# Keep headshots if you want them on Vercel
+!frontend/public/headshots/
+!frontend/public/headshots/*.jpg
+!frontend/public/headshots/*.png
+!frontend/public/headshots/*.jpeg
+!frontend/public/headshots/*.webp
+
+# OS
+.DS_Store

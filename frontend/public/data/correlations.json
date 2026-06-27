@@ -1,0 +1,1202 @@
+[
+  {
+    "position": "G",
+    "feature": "recruiting_stars",
+    "spearman_corr_with_success_score": 0.2506779364774964,
+    "abs_corr": 0.2506779364774964,
+    "n": 174,
+    "direction": "positive"
+  },
+  {
+    "position": "G",
+    "feature": "recruiting_rating",
+    "spearman_corr_with_success_score": 0.227364241318132,
+    "abs_corr": 0.227364241318132,
+    "n": 174,
+    "direction": "positive"
+  },
+  {
+    "position": "G",
+    "feature": "defensive_event_score",
+    "spearman_corr_with_success_score": 0.2153337092187104,
+    "abs_corr": 0.2153337092187104,
+    "n": 383,
+    "direction": "positive"
+  },
+  {
+    "position": "G",
+    "feature": "stock_rate_per_40",
+    "spearman_corr_with_success_score": 0.2133921202910107,
+    "abs_corr": 0.2133921202910107,
+    "n": 383,
+    "direction": "positive"
+  },
+  {
+    "position": "G",
+    "feature": "steals_per_40",
+    "spearman_corr_with_success_score": 0.2056278372205117,
+    "abs_corr": 0.2056278372205117,
+    "n": 383,
+    "direction": "positive"
+  },
+  {
+    "position": "G",
+    "feature": "steals",
+    "spearman_corr_with_success_score": 0.1874224938969537,
+    "abs_corr": 0.1874224938969537,
+    "n": 383,
+    "direction": "positive"
+  },
+  {
+    "position": "G",
+    "feature": "steals_per_game",
+    "spearman_corr_with_success_score": 0.1791525696744326,
+    "abs_corr": 0.1791525696744326,
+    "n": 383,
+    "direction": "positive"
+  },
+  {
+    "position": "G",
+    "feature": "blocks_per_40",
+    "spearman_corr_with_success_score": 0.1526547650972057,
+    "abs_corr": 0.1526547650972057,
+    "n": 383,
+    "direction": "positive"
+  },
+  {
+    "position": "G",
+    "feature": "blocks",
+    "spearman_corr_with_success_score": 0.1523467651103736,
+    "abs_corr": 0.1523467651103736,
+    "n": 383,
+    "direction": "positive"
+  },
+  {
+    "position": "G",
+    "feature": "blocks_per_game",
+    "spearman_corr_with_success_score": 0.1438382981658528,
+    "abs_corr": 0.1438382981658528,
+    "n": 383,
+    "direction": "positive"
+  },
+  {
+    "position": "G",
+    "feature": "games_played",
+    "spearman_corr_with_success_score": 0.1166214548715673,
+    "abs_corr": 0.1166214548715673,
+    "n": 383,
+    "direction": "positive"
+  },
+  {
+    "position": "G",
+    "feature": "rebounds",
+    "spearman_corr_with_success_score": 0.1113474738038914,
+    "abs_corr": 0.1113474738038914,
+    "n": 383,
+    "direction": "positive"
+  },
+  {
+    "position": "G",
+    "feature": "rebounds_per_40",
+    "spearman_corr_with_success_score": 0.1072934302155437,
+    "abs_corr": 0.1072934302155437,
+    "n": 383,
+    "direction": "positive"
+  },
+  {
+    "position": "G",
+    "feature": "personal_fouls",
+    "spearman_corr_with_success_score": 0.1063927404018012,
+    "abs_corr": 0.1063927404018012,
+    "n": 383,
+    "direction": "positive"
+  },
+  {
+    "position": "G",
+    "feature": "points",
+    "spearman_corr_with_success_score": 0.0840398204276631,
+    "abs_corr": 0.0840398204276631,
+    "n": 383,
+    "direction": "positive"
+  },
+  {
+    "position": "G",
+    "feature": "rebounds_per_game",
+    "spearman_corr_with_success_score": 0.0830599265245384,
+    "abs_corr": 0.0830599265245384,
+    "n": 383,
+    "direction": "positive"
+  },
+  {
+    "position": "G",
+    "feature": "points_per_40",
+    "spearman_corr_with_success_score": 0.0815031877679192,
+    "abs_corr": 0.0815031877679192,
+    "n": 383,
+    "direction": "positive"
+  },
+  {
+    "position": "G",
+    "feature": "assists_per_40",
+    "spearman_corr_with_success_score": 0.0726194715968344,
+    "abs_corr": 0.0726194715968344,
+    "n": 383,
+    "direction": "positive"
+  },
+  {
+    "position": "G",
+    "feature": "turnovers",
+    "spearman_corr_with_success_score": 0.0687782294008574,
+    "abs_corr": 0.0687782294008574,
+    "n": 383,
+    "direction": "positive"
+  },
+  {
+    "position": "G",
+    "feature": "turnovers_per_40",
+    "spearman_corr_with_success_score": 0.0683721060486165,
+    "abs_corr": 0.0683721060486165,
+    "n": 383,
+    "direction": "positive"
+  },
+  {
+    "position": "G",
+    "feature": "is_high_major",
+    "spearman_corr_with_success_score": 0.0647629990735281,
+    "abs_corr": 0.0647629990735281,
+    "n": 383,
+    "direction": "positive"
+  },
+  {
+    "position": "G",
+    "feature": "personal_fouls_per_game",
+    "spearman_corr_with_success_score": 0.0638172778173567,
+    "abs_corr": 0.0638172778173567,
+    "n": 383,
+    "direction": "positive"
+  },
+  {
+    "position": "G",
+    "feature": "games_started",
+    "spearman_corr_with_success_score": 0.0628694829845016,
+    "abs_corr": 0.0628694829845016,
+    "n": 383,
+    "direction": "positive"
+  },
+  {
+    "position": "G",
+    "feature": "points_per_game",
+    "spearman_corr_with_success_score": 0.0536609616853813,
+    "abs_corr": 0.0536609616853813,
+    "n": 383,
+    "direction": "positive"
+  },
+  {
+    "position": "G",
+    "feature": "assists",
+    "spearman_corr_with_success_score": 0.0510007007275011,
+    "abs_corr": 0.0510007007275011,
+    "n": 383,
+    "direction": "positive"
+  },
+  {
+    "position": "G",
+    "feature": "draft_pick_overall",
+    "spearman_corr_with_success_score": -0.663906922616684,
+    "abs_corr": 0.663906922616684,
+    "n": 383,
+    "direction": "negative"
+  },
+  {
+    "position": "G",
+    "feature": "draft_round",
+    "spearman_corr_with_success_score": -0.5728234717095796,
+    "abs_corr": 0.5728234717095796,
+    "n": 383,
+    "direction": "negative"
+  },
+  {
+    "position": "G",
+    "feature": "draft_round_pick",
+    "spearman_corr_with_success_score": -0.3108990625782389,
+    "abs_corr": 0.3108990625782389,
+    "n": 383,
+    "direction": "negative"
+  },
+  {
+    "position": "G",
+    "feature": "recruiting_rank",
+    "spearman_corr_with_success_score": -0.2297229412321,
+    "abs_corr": 0.2297229412321,
+    "n": 174,
+    "direction": "negative"
+  },
+  {
+    "position": "G",
+    "feature": "log_recruiting_rank",
+    "spearman_corr_with_success_score": -0.2297229412321,
+    "abs_corr": 0.2297229412321,
+    "n": 174,
+    "direction": "negative"
+  },
+  {
+    "position": "G",
+    "feature": "minutes_per_game",
+    "spearman_corr_with_success_score": -0.0439542703117903,
+    "abs_corr": 0.0439542703117903,
+    "n": 383,
+    "direction": "negative"
+  },
+  {
+    "position": "G",
+    "feature": "assist_to_turnover_ratio",
+    "spearman_corr_with_success_score": 0.0200534749640239,
+    "abs_corr": 0.0200534749640239,
+    "n": 381,
+    "direction": "negative"
+  },
+  {
+    "position": "G",
+    "feature": "usage_rate",
+    "spearman_corr_with_success_score": 0.032173583744247,
+    "abs_corr": 0.032173583744247,
+    "n": 383,
+    "direction": "negative"
+  },
+  {
+    "position": "G",
+    "feature": "minutes",
+    "spearman_corr_with_success_score": 0.0445388773790763,
+    "abs_corr": 0.0445388773790763,
+    "n": 383,
+    "direction": "negative"
+  },
+  {
+    "position": "G",
+    "feature": "turnovers_per_game",
+    "spearman_corr_with_success_score": 0.044637477070711,
+    "abs_corr": 0.044637477070711,
+    "n": 383,
+    "direction": "negative"
+  },
+  {
+    "position": "G",
+    "feature": "assists_per_game",
+    "spearman_corr_with_success_score": 0.0452272449742363,
+    "abs_corr": 0.0452272449742363,
+    "n": 383,
+    "direction": "negative"
+  },
+  {
+    "position": "G",
+    "feature": "assists",
+    "spearman_corr_with_success_score": 0.0510007007275011,
+    "abs_corr": 0.0510007007275011,
+    "n": 383,
+    "direction": "negative"
+  },
+  {
+    "position": "G",
+    "feature": "points_per_game",
+    "spearman_corr_with_success_score": 0.0536609616853813,
+    "abs_corr": 0.0536609616853813,
+    "n": 383,
+    "direction": "negative"
+  },
+  {
+    "position": "G",
+    "feature": "games_started",
+    "spearman_corr_with_success_score": 0.0628694829845016,
+    "abs_corr": 0.0628694829845016,
+    "n": 383,
+    "direction": "negative"
+  },
+  {
+    "position": "G",
+    "feature": "personal_fouls_per_game",
+    "spearman_corr_with_success_score": 0.0638172778173567,
+    "abs_corr": 0.0638172778173567,
+    "n": 383,
+    "direction": "negative"
+  },
+  {
+    "position": "G",
+    "feature": "is_high_major",
+    "spearman_corr_with_success_score": 0.0647629990735281,
+    "abs_corr": 0.0647629990735281,
+    "n": 383,
+    "direction": "negative"
+  },
+  {
+    "position": "G",
+    "feature": "turnovers_per_40",
+    "spearman_corr_with_success_score": 0.0683721060486165,
+    "abs_corr": 0.0683721060486165,
+    "n": 383,
+    "direction": "negative"
+  },
+  {
+    "position": "G",
+    "feature": "turnovers",
+    "spearman_corr_with_success_score": 0.0687782294008574,
+    "abs_corr": 0.0687782294008574,
+    "n": 383,
+    "direction": "negative"
+  },
+  {
+    "position": "G",
+    "feature": "assists_per_40",
+    "spearman_corr_with_success_score": 0.0726194715968344,
+    "abs_corr": 0.0726194715968344,
+    "n": 383,
+    "direction": "negative"
+  },
+  {
+    "position": "G",
+    "feature": "points_per_40",
+    "spearman_corr_with_success_score": 0.0815031877679192,
+    "abs_corr": 0.0815031877679192,
+    "n": 383,
+    "direction": "negative"
+  },
+  {
+    "position": "G",
+    "feature": "rebounds_per_game",
+    "spearman_corr_with_success_score": 0.0830599265245384,
+    "abs_corr": 0.0830599265245384,
+    "n": 383,
+    "direction": "negative"
+  },
+  {
+    "position": "G",
+    "feature": "points",
+    "spearman_corr_with_success_score": 0.0840398204276631,
+    "abs_corr": 0.0840398204276631,
+    "n": 383,
+    "direction": "negative"
+  },
+  {
+    "position": "G",
+    "feature": "personal_fouls",
+    "spearman_corr_with_success_score": 0.1063927404018012,
+    "abs_corr": 0.1063927404018012,
+    "n": 383,
+    "direction": "negative"
+  },
+  {
+    "position": "G",
+    "feature": "rebounds_per_40",
+    "spearman_corr_with_success_score": 0.1072934302155437,
+    "abs_corr": 0.1072934302155437,
+    "n": 383,
+    "direction": "negative"
+  },
+  {
+    "position": "G",
+    "feature": "rebounds",
+    "spearman_corr_with_success_score": 0.1113474738038914,
+    "abs_corr": 0.1113474738038914,
+    "n": 383,
+    "direction": "negative"
+  },
+  {
+    "position": "F",
+    "feature": "recruiting_rating",
+    "spearman_corr_with_success_score": 0.2808201195617908,
+    "abs_corr": 0.2808201195617908,
+    "n": 137,
+    "direction": "positive"
+  },
+  {
+    "position": "F",
+    "feature": "recruiting_stars",
+    "spearman_corr_with_success_score": 0.2565105753409201,
+    "abs_corr": 0.2565105753409201,
+    "n": 137,
+    "direction": "positive"
+  },
+  {
+    "position": "F",
+    "feature": "steals",
+    "spearman_corr_with_success_score": 0.2134924454858562,
+    "abs_corr": 0.2134924454858562,
+    "n": 347,
+    "direction": "positive"
+  },
+  {
+    "position": "F",
+    "feature": "steals_per_game",
+    "spearman_corr_with_success_score": 0.1878645376344702,
+    "abs_corr": 0.1878645376344702,
+    "n": 347,
+    "direction": "positive"
+  },
+  {
+    "position": "F",
+    "feature": "steals_per_40",
+    "spearman_corr_with_success_score": 0.1634347320254399,
+    "abs_corr": 0.1634347320254399,
+    "n": 347,
+    "direction": "positive"
+  },
+  {
+    "position": "F",
+    "feature": "games_started",
+    "spearman_corr_with_success_score": 0.1557744716352715,
+    "abs_corr": 0.1557744716352715,
+    "n": 347,
+    "direction": "positive"
+  },
+  {
+    "position": "F",
+    "feature": "assists",
+    "spearman_corr_with_success_score": 0.1515386001682582,
+    "abs_corr": 0.1515386001682582,
+    "n": 347,
+    "direction": "positive"
+  },
+  {
+    "position": "F",
+    "feature": "points",
+    "spearman_corr_with_success_score": 0.1514044281150566,
+    "abs_corr": 0.1514044281150566,
+    "n": 347,
+    "direction": "positive"
+  },
+  {
+    "position": "F",
+    "feature": "points_per_40",
+    "spearman_corr_with_success_score": 0.1418785810744995,
+    "abs_corr": 0.1418785810744995,
+    "n": 347,
+    "direction": "positive"
+  },
+  {
+    "position": "F",
+    "feature": "rebounds",
+    "spearman_corr_with_success_score": 0.1329923075234912,
+    "abs_corr": 0.1329923075234912,
+    "n": 347,
+    "direction": "positive"
+  },
+  {
+    "position": "F",
+    "feature": "points_per_game",
+    "spearman_corr_with_success_score": 0.1305187793264408,
+    "abs_corr": 0.1305187793264408,
+    "n": 347,
+    "direction": "positive"
+  },
+  {
+    "position": "F",
+    "feature": "is_high_major",
+    "spearman_corr_with_success_score": 0.1289269335602475,
+    "abs_corr": 0.1289269335602475,
+    "n": 347,
+    "direction": "positive"
+  },
+  {
+    "position": "F",
+    "feature": "assists_per_game",
+    "spearman_corr_with_success_score": 0.1271759617427786,
+    "abs_corr": 0.1271759617427786,
+    "n": 347,
+    "direction": "positive"
+  },
+  {
+    "position": "F",
+    "feature": "turnovers",
+    "spearman_corr_with_success_score": 0.12389320622389,
+    "abs_corr": 0.12389320622389,
+    "n": 347,
+    "direction": "positive"
+  },
+  {
+    "position": "F",
+    "feature": "games_played",
+    "spearman_corr_with_success_score": 0.1187870595765729,
+    "abs_corr": 0.1187870595765729,
+    "n": 347,
+    "direction": "positive"
+  },
+  {
+    "position": "F",
+    "feature": "assists_per_40",
+    "spearman_corr_with_success_score": 0.1106029571138609,
+    "abs_corr": 0.1106029571138609,
+    "n": 347,
+    "direction": "positive"
+  },
+  {
+    "position": "F",
+    "feature": "personal_fouls",
+    "spearman_corr_with_success_score": 0.1039122512714342,
+    "abs_corr": 0.1039122512714342,
+    "n": 347,
+    "direction": "positive"
+  },
+  {
+    "position": "F",
+    "feature": "usage_rate",
+    "spearman_corr_with_success_score": 0.1028931667446994,
+    "abs_corr": 0.1028931667446994,
+    "n": 347,
+    "direction": "positive"
+  },
+  {
+    "position": "F",
+    "feature": "assist_to_turnover_ratio",
+    "spearman_corr_with_success_score": 0.0996764112355211,
+    "abs_corr": 0.0996764112355211,
+    "n": 347,
+    "direction": "positive"
+  },
+  {
+    "position": "F",
+    "feature": "defensive_event_score",
+    "spearman_corr_with_success_score": 0.0961191987910652,
+    "abs_corr": 0.0961191987910652,
+    "n": 347,
+    "direction": "positive"
+  },
+  {
+    "position": "F",
+    "feature": "minutes",
+    "spearman_corr_with_success_score": 0.0932307256600891,
+    "abs_corr": 0.0932307256600891,
+    "n": 347,
+    "direction": "positive"
+  },
+  {
+    "position": "F",
+    "feature": "blocks",
+    "spearman_corr_with_success_score": 0.0894594050385961,
+    "abs_corr": 0.0894594050385961,
+    "n": 347,
+    "direction": "positive"
+  },
+  {
+    "position": "F",
+    "feature": "stock_rate_per_40",
+    "spearman_corr_with_success_score": 0.0848672342137814,
+    "abs_corr": 0.0848672342137814,
+    "n": 347,
+    "direction": "positive"
+  },
+  {
+    "position": "F",
+    "feature": "rebounds_per_game",
+    "spearman_corr_with_success_score": 0.0837809822152765,
+    "abs_corr": 0.0837809822152765,
+    "n": 347,
+    "direction": "positive"
+  },
+  {
+    "position": "F",
+    "feature": "turnovers_per_game",
+    "spearman_corr_with_success_score": 0.0710108751117333,
+    "abs_corr": 0.0710108751117333,
+    "n": 347,
+    "direction": "positive"
+  },
+  {
+    "position": "F",
+    "feature": "draft_pick_overall",
+    "spearman_corr_with_success_score": -0.6636230792307822,
+    "abs_corr": 0.6636230792307822,
+    "n": 347,
+    "direction": "negative"
+  },
+  {
+    "position": "F",
+    "feature": "draft_round",
+    "spearman_corr_with_success_score": -0.5558937228425938,
+    "abs_corr": 0.5558937228425938,
+    "n": 347,
+    "direction": "negative"
+  },
+  {
+    "position": "F",
+    "feature": "draft_round_pick",
+    "spearman_corr_with_success_score": -0.3397003102419532,
+    "abs_corr": 0.3397003102419532,
+    "n": 347,
+    "direction": "negative"
+  },
+  {
+    "position": "F",
+    "feature": "log_recruiting_rank",
+    "spearman_corr_with_success_score": -0.271594179071829,
+    "abs_corr": 0.271594179071829,
+    "n": 137,
+    "direction": "negative"
+  },
+  {
+    "position": "F",
+    "feature": "recruiting_rank",
+    "spearman_corr_with_success_score": -0.271594179071829,
+    "abs_corr": 0.271594179071829,
+    "n": 137,
+    "direction": "negative"
+  },
+  {
+    "position": "F",
+    "feature": "blocks_per_40",
+    "spearman_corr_with_success_score": 0.0111158678671442,
+    "abs_corr": 0.0111158678671442,
+    "n": 347,
+    "direction": "negative"
+  },
+  {
+    "position": "F",
+    "feature": "personal_fouls_per_game",
+    "spearman_corr_with_success_score": 0.0221301996099742,
+    "abs_corr": 0.0221301996099742,
+    "n": 347,
+    "direction": "negative"
+  },
+  {
+    "position": "F",
+    "feature": "rebounds_per_40",
+    "spearman_corr_with_success_score": 0.0328162343716715,
+    "abs_corr": 0.0328162343716715,
+    "n": 347,
+    "direction": "negative"
+  },
+  {
+    "position": "F",
+    "feature": "turnovers_per_40",
+    "spearman_corr_with_success_score": 0.0361356192812943,
+    "abs_corr": 0.0361356192812943,
+    "n": 347,
+    "direction": "negative"
+  },
+  {
+    "position": "F",
+    "feature": "minutes_per_game",
+    "spearman_corr_with_success_score": 0.0576726959427093,
+    "abs_corr": 0.0576726959427093,
+    "n": 347,
+    "direction": "negative"
+  },
+  {
+    "position": "F",
+    "feature": "blocks_per_game",
+    "spearman_corr_with_success_score": 0.0586205672085384,
+    "abs_corr": 0.0586205672085384,
+    "n": 347,
+    "direction": "negative"
+  },
+  {
+    "position": "F",
+    "feature": "turnovers_per_game",
+    "spearman_corr_with_success_score": 0.0710108751117333,
+    "abs_corr": 0.0710108751117333,
+    "n": 347,
+    "direction": "negative"
+  },
+  {
+    "position": "F",
+    "feature": "rebounds_per_game",
+    "spearman_corr_with_success_score": 0.0837809822152765,
+    "abs_corr": 0.0837809822152765,
+    "n": 347,
+    "direction": "negative"
+  },
+  {
+    "position": "F",
+    "feature": "stock_rate_per_40",
+    "spearman_corr_with_success_score": 0.0848672342137814,
+    "abs_corr": 0.0848672342137814,
+    "n": 347,
+    "direction": "negative"
+  },
+  {
+    "position": "F",
+    "feature": "blocks",
+    "spearman_corr_with_success_score": 0.0894594050385961,
+    "abs_corr": 0.0894594050385961,
+    "n": 347,
+    "direction": "negative"
+  },
+  {
+    "position": "F",
+    "feature": "minutes",
+    "spearman_corr_with_success_score": 0.0932307256600891,
+    "abs_corr": 0.0932307256600891,
+    "n": 347,
+    "direction": "negative"
+  },
+  {
+    "position": "F",
+    "feature": "defensive_event_score",
+    "spearman_corr_with_success_score": 0.0961191987910652,
+    "abs_corr": 0.0961191987910652,
+    "n": 347,
+    "direction": "negative"
+  },
+  {
+    "position": "F",
+    "feature": "assist_to_turnover_ratio",
+    "spearman_corr_with_success_score": 0.0996764112355211,
+    "abs_corr": 0.0996764112355211,
+    "n": 347,
+    "direction": "negative"
+  },
+  {
+    "position": "F",
+    "feature": "usage_rate",
+    "spearman_corr_with_success_score": 0.1028931667446994,
+    "abs_corr": 0.1028931667446994,
+    "n": 347,
+    "direction": "negative"
+  },
+  {
+    "position": "F",
+    "feature": "personal_fouls",
+    "spearman_corr_with_success_score": 0.1039122512714342,
+    "abs_corr": 0.1039122512714342,
+    "n": 347,
+    "direction": "negative"
+  },
+  {
+    "position": "F",
+    "feature": "assists_per_40",
+    "spearman_corr_with_success_score": 0.1106029571138609,
+    "abs_corr": 0.1106029571138609,
+    "n": 347,
+    "direction": "negative"
+  },
+  {
+    "position": "F",
+    "feature": "games_played",
+    "spearman_corr_with_success_score": 0.1187870595765729,
+    "abs_corr": 0.1187870595765729,
+    "n": 347,
+    "direction": "negative"
+  },
+  {
+    "position": "F",
+    "feature": "turnovers",
+    "spearman_corr_with_success_score": 0.12389320622389,
+    "abs_corr": 0.12389320622389,
+    "n": 347,
+    "direction": "negative"
+  },
+  {
+    "position": "F",
+    "feature": "assists_per_game",
+    "spearman_corr_with_success_score": 0.1271759617427786,
+    "abs_corr": 0.1271759617427786,
+    "n": 347,
+    "direction": "negative"
+  },
+  {
+    "position": "F",
+    "feature": "is_high_major",
+    "spearman_corr_with_success_score": 0.1289269335602475,
+    "abs_corr": 0.1289269335602475,
+    "n": 347,
+    "direction": "negative"
+  },
+  {
+    "position": "C",
+    "feature": "recruiting_stars",
+    "spearman_corr_with_success_score": 0.2353086794435306,
+    "abs_corr": 0.2353086794435306,
+    "n": 27,
+    "direction": "positive"
+  },
+  {
+    "position": "C",
+    "feature": "recruiting_rating",
+    "spearman_corr_with_success_score": 0.2195084745464531,
+    "abs_corr": 0.2195084745464531,
+    "n": 27,
+    "direction": "positive"
+  },
+  {
+    "position": "C",
+    "feature": "blocks_per_game",
+    "spearman_corr_with_success_score": 0.2072730115196737,
+    "abs_corr": 0.2072730115196737,
+    "n": 65,
+    "direction": "positive"
+  },
+  {
+    "position": "C",
+    "feature": "assists_per_game",
+    "spearman_corr_with_success_score": 0.17259111607067,
+    "abs_corr": 0.17259111607067,
+    "n": 65,
+    "direction": "positive"
+  },
+  {
+    "position": "C",
+    "feature": "blocks",
+    "spearman_corr_with_success_score": 0.1509999806738507,
+    "abs_corr": 0.1509999806738507,
+    "n": 65,
+    "direction": "positive"
+  },
+  {
+    "position": "C",
+    "feature": "assists_per_40",
+    "spearman_corr_with_success_score": 0.1370139254407064,
+    "abs_corr": 0.1370139254407064,
+    "n": 65,
+    "direction": "positive"
+  },
+  {
+    "position": "C",
+    "feature": "assists",
+    "spearman_corr_with_success_score": 0.136030385648929,
+    "abs_corr": 0.136030385648929,
+    "n": 65,
+    "direction": "positive"
+  },
+  {
+    "position": "C",
+    "feature": "assist_to_turnover_ratio",
+    "spearman_corr_with_success_score": 0.1342717691135962,
+    "abs_corr": 0.1342717691135962,
+    "n": 65,
+    "direction": "positive"
+  },
+  {
+    "position": "C",
+    "feature": "minutes_per_game",
+    "spearman_corr_with_success_score": 0.1299707447268003,
+    "abs_corr": 0.1299707447268003,
+    "n": 65,
+    "direction": "positive"
+  },
+  {
+    "position": "C",
+    "feature": "rebounds_per_game",
+    "spearman_corr_with_success_score": 0.118827631393059,
+    "abs_corr": 0.118827631393059,
+    "n": 65,
+    "direction": "positive"
+  },
+  {
+    "position": "C",
+    "feature": "blocks_per_40",
+    "spearman_corr_with_success_score": 0.1178092277176954,
+    "abs_corr": 0.1178092277176954,
+    "n": 65,
+    "direction": "positive"
+  },
+  {
+    "position": "C",
+    "feature": "turnovers_per_game",
+    "spearman_corr_with_success_score": 0.1171722366965322,
+    "abs_corr": 0.1171722366965322,
+    "n": 65,
+    "direction": "positive"
+  },
+  {
+    "position": "C",
+    "feature": "defensive_event_score",
+    "spearman_corr_with_success_score": 0.1099786106506819,
+    "abs_corr": 0.1099786106506819,
+    "n": 65,
+    "direction": "positive"
+  },
+  {
+    "position": "C",
+    "feature": "stock_rate_per_40",
+    "spearman_corr_with_success_score": 0.1066538793820058,
+    "abs_corr": 0.1066538793820058,
+    "n": 65,
+    "direction": "positive"
+  },
+  {
+    "position": "C",
+    "feature": "minutes",
+    "spearman_corr_with_success_score": 0.1065468416310706,
+    "abs_corr": 0.1065468416310706,
+    "n": 65,
+    "direction": "positive"
+  },
+  {
+    "position": "C",
+    "feature": "points_per_game",
+    "spearman_corr_with_success_score": 0.0904239412151788,
+    "abs_corr": 0.0904239412151788,
+    "n": 65,
+    "direction": "positive"
+  },
+  {
+    "position": "C",
+    "feature": "is_high_major",
+    "spearman_corr_with_success_score": 0.0886521851350818,
+    "abs_corr": 0.0886521851350818,
+    "n": 65,
+    "direction": "positive"
+  },
+  {
+    "position": "C",
+    "feature": "steals",
+    "spearman_corr_with_success_score": 0.0884691250111271,
+    "abs_corr": 0.0884691250111271,
+    "n": 65,
+    "direction": "positive"
+  },
+  {
+    "position": "C",
+    "feature": "steals_per_game",
+    "spearman_corr_with_success_score": 0.0850030949229736,
+    "abs_corr": 0.0850030949229736,
+    "n": 65,
+    "direction": "positive"
+  },
+  {
+    "position": "C",
+    "feature": "points",
+    "spearman_corr_with_success_score": 0.080102401474009,
+    "abs_corr": 0.080102401474009,
+    "n": 65,
+    "direction": "positive"
+  },
+  {
+    "position": "C",
+    "feature": "games_started",
+    "spearman_corr_with_success_score": 0.068831822386671,
+    "abs_corr": 0.068831822386671,
+    "n": 65,
+    "direction": "positive"
+  },
+  {
+    "position": "C",
+    "feature": "usage_rate",
+    "spearman_corr_with_success_score": 0.0607579004549527,
+    "abs_corr": 0.0607579004549527,
+    "n": 65,
+    "direction": "positive"
+  },
+  {
+    "position": "C",
+    "feature": "turnovers",
+    "spearman_corr_with_success_score": 0.053357848621301,
+    "abs_corr": 0.053357848621301,
+    "n": 65,
+    "direction": "positive"
+  },
+  {
+    "position": "C",
+    "feature": "rebounds",
+    "spearman_corr_with_success_score": 0.0437831012710285,
+    "abs_corr": 0.0437831012710285,
+    "n": 65,
+    "direction": "positive"
+  },
+  {
+    "position": "C",
+    "feature": "steals_per_40",
+    "spearman_corr_with_success_score": 0.0260291461166092,
+    "abs_corr": 0.0260291461166092,
+    "n": 65,
+    "direction": "positive"
+  },
+  {
+    "position": "C",
+    "feature": "draft_pick_overall",
+    "spearman_corr_with_success_score": -0.5851615094854911,
+    "abs_corr": 0.5851615094854911,
+    "n": 65,
+    "direction": "negative"
+  },
+  {
+    "position": "C",
+    "feature": "draft_round",
+    "spearman_corr_with_success_score": -0.5220628680177039,
+    "abs_corr": 0.5220628680177039,
+    "n": 65,
+    "direction": "negative"
+  },
+  {
+    "position": "C",
+    "feature": "draft_round_pick",
+    "spearman_corr_with_success_score": -0.3358189479762067,
+    "abs_corr": 0.3358189479762067,
+    "n": 65,
+    "direction": "negative"
+  },
+  {
+    "position": "C",
+    "feature": "recruiting_rank",
+    "spearman_corr_with_success_score": -0.2277592653742194,
+    "abs_corr": 0.2277592653742194,
+    "n": 27,
+    "direction": "negative"
+  },
+  {
+    "position": "C",
+    "feature": "log_recruiting_rank",
+    "spearman_corr_with_success_score": -0.2277592653742194,
+    "abs_corr": 0.2277592653742194,
+    "n": 27,
+    "direction": "negative"
+  },
+  {
+    "position": "C",
+    "feature": "personal_fouls_per_game",
+    "spearman_corr_with_success_score": -0.0882443320146535,
+    "abs_corr": 0.0882443320146535,
+    "n": 65,
+    "direction": "negative"
+  },
+  {
+    "position": "C",
+    "feature": "personal_fouls",
+    "spearman_corr_with_success_score": -0.0817630765887199,
+    "abs_corr": 0.0817630765887199,
+    "n": 65,
+    "direction": "negative"
+  },
+  {
+    "position": "C",
+    "feature": "games_played",
+    "spearman_corr_with_success_score": -0.0391260933945167,
+    "abs_corr": 0.0391260933945167,
+    "n": 65,
+    "direction": "negative"
+  },
+  {
+    "position": "C",
+    "feature": "turnovers_per_40",
+    "spearman_corr_with_success_score": -0.0161424452387039,
+    "abs_corr": 0.0161424452387039,
+    "n": 65,
+    "direction": "negative"
+  },
+  {
+    "position": "C",
+    "feature": "rebounds_per_40",
+    "spearman_corr_with_success_score": 0.0087055463482441,
+    "abs_corr": 0.0087055463482441,
+    "n": 65,
+    "direction": "negative"
+  },
+  {
+    "position": "C",
+    "feature": "points_per_40",
+    "spearman_corr_with_success_score": 0.0169517548238421,
+    "abs_corr": 0.0169517548238421,
+    "n": 65,
+    "direction": "negative"
+  },
+  {
+    "position": "C",
+    "feature": "steals_per_40",
+    "spearman_corr_with_success_score": 0.0260291461166092,
+    "abs_corr": 0.0260291461166092,
+    "n": 65,
+    "direction": "negative"
+  },
+  {
+    "position": "C",
+    "feature": "rebounds",
+    "spearman_corr_with_success_score": 0.0437831012710285,
+    "abs_corr": 0.0437831012710285,
+    "n": 65,
+    "direction": "negative"
+  },
+  {
+    "position": "C",
+    "feature": "turnovers",
+    "spearman_corr_with_success_score": 0.053357848621301,
+    "abs_corr": 0.053357848621301,
+    "n": 65,
+    "direction": "negative"
+  },
+  {
+    "position": "C",
+    "feature": "usage_rate",
+    "spearman_corr_with_success_score": 0.0607579004549527,
+    "abs_corr": 0.0607579004549527,
+    "n": 65,
+    "direction": "negative"
+  },
+  {
+    "position": "C",
+    "feature": "games_started",
+    "spearman_corr_with_success_score": 0.068831822386671,
+    "abs_corr": 0.068831822386671,
+    "n": 65,
+    "direction": "negative"
+  },
+  {
+    "position": "C",
+    "feature": "points",
+    "spearman_corr_with_success_score": 0.080102401474009,
+    "abs_corr": 0.080102401474009,
+    "n": 65,
+    "direction": "negative"
+  },
+  {
+    "position": "C",
+    "feature": "steals_per_game",
+    "spearman_corr_with_success_score": 0.0850030949229736,
+    "abs_corr": 0.0850030949229736,
+    "n": 65,
+    "direction": "negative"
+  },
+  {
+    "position": "C",
+    "feature": "steals",
+    "spearman_corr_with_success_score": 0.0884691250111271,
+    "abs_corr": 0.0884691250111271,
+    "n": 65,
+    "direction": "negative"
+  },
+  {
+    "position": "C",
+    "feature": "is_high_major",
+    "spearman_corr_with_success_score": 0.0886521851350818,
+    "abs_corr": 0.0886521851350818,
+    "n": 65,
+    "direction": "negative"
+  },
+  {
+    "position": "C",
+    "feature": "points_per_game",
+    "spearman_corr_with_success_score": 0.0904239412151788,
+    "abs_corr": 0.0904239412151788,
+    "n": 65,
+    "direction": "negative"
+  },
+  {
+    "position": "C",
+    "feature": "minutes",
+    "spearman_corr_with_success_score": 0.1065468416310706,
+    "abs_corr": 0.1065468416310706,
+    "n": 65,
+    "direction": "negative"
+  },
+  {
+    "position": "C",
+    "feature": "stock_rate_per_40",
+    "spearman_corr_with_success_score": 0.1066538793820058,
+    "abs_corr": 0.1066538793820058,
+    "n": 65,
+    "direction": "negative"
+  },
+  {
+    "position": "C",
+    "feature": "defensive_event_score",
+    "spearman_corr_with_success_score": 0.1099786106506819,
+    "abs_corr": 0.1099786106506819,
+    "n": 65,
+    "direction": "negative"
+  },
+  {
+    "position": "C",
+    "feature": "turnovers_per_game",
+    "spearman_corr_with_success_score": 0.1171722366965322,
+    "abs_corr": 0.1171722366965322,
+    "n": 65,
+    "direction": "negative"
+  }
+]

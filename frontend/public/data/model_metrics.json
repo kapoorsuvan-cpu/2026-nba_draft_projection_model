@@ -1,0 +1,53 @@
+[
+  {
+    "position": "G",
+    "status": "ok",
+    "best_model_name": "position_specific_G",
+    "best_algorithm": "random_forest",
+    "macro_f1": 0.3208875788094653,
+    "balanced_accuracy": 0.3111672278338945,
+    "accuracy": 0.4,
+    "weighted_f1": 0.392011790714812,
+    "log_loss": 1.0683688562093685,
+    "ovr_roc_auc": 0.4783841959661944,
+    "brier_score": 0.21554148669092,
+    "test_n": 50,
+    "train_n": 333,
+    "n_features": 34,
+    "model_path": "/Users/suvankapoor/Downloads/nba_college_projection_model/models/position_specific_G__random_forest.pkl"
+  },
+  {
+    "position": "F",
+    "status": "ok",
+    "best_model_name": "position_specific_F",
+    "best_algorithm": "hist_gradient_boosting",
+    "macro_f1": 0.4772430184194889,
+    "balanced_accuracy": 0.5148148148148147,
+    "accuracy": 0.4827586206896552,
+    "weighted_f1": 0.4981006822791812,
+    "log_loss": 1.195200403150383,
+    "ovr_roc_auc": 0.6320487483530962,
+    "brier_score": 0.2441311542814891,
+    "test_n": 29,
+    "train_n": 318,
+    "n_features": 34,
+    "model_path": "/Users/suvankapoor/Downloads/nba_college_projection_model/models/position_specific_F__hist_gradient_boosting.pkl"
+  },
+  {
+    "position": "C",
+    "status": "ok",
+    "best_model_name": "position_specific_C",
+    "best_algorithm": "lightgbm",
+    "macro_f1": 0.5277777777777778,
+    "balanced_accuracy": 0.7333333333333334,
+    "accuracy": 0.5555555555555556,
+    "weighted_f1": 0.4907407407407407,
+    "log_loss": 1.3711651968579086,
+    "ovr_roc_auc": 0.6805555555555557,
+    "brier_score": 0.2672130107434573,
+    "test_n": 9,
+    "train_n": 56,
+    "n_features": 34,
+    "model_path": "/Users/suvankapoor/Downloads/nba_college_projection_model/models/position_specific_C__lightgbm.pkl"
+  }
+]
