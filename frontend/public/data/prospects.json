@@ -560,6 +560,7 @@
     "recruiting_rating": 0.982,
     "recruiting_stars": 5.0,
     "feature_coverage_pct": 1.0,
+    "predicted_label": "Rotation",
     "prob_star": 0.0096815349607874,
     "prob_rotation": 0.5436965678934175,
     "prob_not_nba_level": 0.4466218971457951,
