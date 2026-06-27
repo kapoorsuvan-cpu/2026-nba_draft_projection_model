@@ -355,11 +355,14 @@ const selectedImportance = useMemo(() => {
     .slice(0, 12);
 
   if (rawRows.length > 0) {
-    const maxImportance = Math.max(...rawRows.map((x) => x.rawImportance));
-
+    const totalImportance = rawRows.reduce((sum, x) => sum + x.rawImportance, 0);
+  
     return rawRows.map((x) => ({
       feature: x.feature,
-      importance: maxImportance > 0 ? Number((x.rawImportance / maxImportance).toFixed(3)) : 0,
+      importance:
+        totalImportance > 0
+          ? Number((x.rawImportance / totalImportance).toFixed(3))
+          : 0,
     }));
   }
 
@@ -376,11 +379,14 @@ const selectedImportance = useMemo(() => {
     },
   ].filter((x) => x.rawImportance > 0);
 
-  const maxFallback = Math.max(...fallbackRows.map((x) => x.rawImportance));
-
+  const totalFallback = fallbackRows.reduce((sum, x) => sum + x.rawImportance, 0);
+  
   return fallbackRows.map((x) => ({
     feature: x.feature,
-    importance: maxFallback > 0 ? Number((x.rawImportance / maxFallback).toFixed(3)) : 0,
+    importance:
+      totalFallback > 0
+        ? Number((x.rawImportance / totalFallback).toFixed(3))
+        : 0,
   }));
 }, [importance, selected]);
 
@@ -423,7 +429,7 @@ const selectedImportance = useMemo(() => {
           <div>
             <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1 text-sm text-slate-600">
               <Brain size={16} />
-              NBA College Projection Model
+              NBA Draft Projection Model
             </div>
             <h1 className="max-w-5xl text-4xl font-semibold tracking-tight md:text-6xl">
               2026 NBA draft prospect outcome dashboard
