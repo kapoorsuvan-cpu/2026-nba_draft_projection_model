@@ -177,7 +177,11 @@ function Stat({ label, value }: { label: string; value: string | number }) {
 function Headshot({ prospect }: { prospect: Prospect }) {
   const [failed, setFailed] = useState(false);
 
-  if (failed) {
+  useEffect(() => {
+    setFailed(false);
+  }, [prospect.slug, prospect.headshot_url]);
+
+  if (failed || !prospect.headshot_url) {
     return (
       <div className="flex h-28 w-28 shrink-0 items-center justify-center rounded-3xl bg-slate-200 text-3xl font-bold text-slate-700">
         {initials(prospect.player_name)}
@@ -572,7 +576,7 @@ const selectedImportance = useMemo(() => {
             <div className="space-y-6">
               <Card>
                 <div className="flex flex-col gap-6 md:flex-row md:items-center">
-                  <Headshot prospect={selected} />
+                  <Headshot key={selected.slug} prospect={selected} />
 
                   <div className="min-w-0 flex-1">
                     <div className="text-sm font-medium text-slate-500">
