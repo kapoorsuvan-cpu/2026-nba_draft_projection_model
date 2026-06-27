@@ -560,14 +560,13 @@
     "recruiting_rating": 0.982,
     "recruiting_stars": 5.0,
     "feature_coverage_pct": 1.0,
-    "predicted_label": "Not NBA Level",
-    "prob_star": 0.0006891099954125,
-    "prob_rotation": 0.1284926109368769,
-    "prob_not_nba_level": 0.8708182790677106,
-    "confidence": 0.8708182790677106,
-    "model_algorithm": "hist_gradient_boosting",
-    "model_macro_f1": 0.4772430184194889,
-    "model_test_n": 29
+    "prob_star": 0.0096815349607874,
+    "prob_rotation": 0.5436965678934175,
+    "prob_not_nba_level": 0.4466218971457951,
+    "confidence": 0.5436965678934175,
+    "model_algorithm": "lightgbm",
+    "model_macro_f1": 0.5277777777777778,
+    "model_test_n": 9
   },
   {
     "espn_rank": 20,
