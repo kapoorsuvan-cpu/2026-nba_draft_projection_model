@@ -160,9 +160,9 @@ function SectionTitle({
 
 function Stat({ label, value }: { label: string; value: string | number }) {
   return (
-    <div className="rounded-2xl bg-slate-100 p-3">
+    <div className="min-w-[96px] rounded-2xl bg-slate-100 px-5 py-4 text-center">
       <div className="text-xs font-medium uppercase tracking-wide text-slate-500">{label}</div>
-      <div className="mt-1 text-lg font-semibold text-slate-950">{value}</div>
+      <div className="mt-1 text-xl font-semibold text-slate-950">{value}</div>
     </div>
   );
 }
@@ -523,7 +523,7 @@ export default function Page() {
                       {selected.position} · {selected.college_team ?? "Unknown"} · {selected.conference ?? "Unknown"}
                     </p>
 
-                    <div className="mt-5 grid grid-cols-2 gap-3 md:grid-cols-6">
+                    <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3 xl:grid-cols-6">
                       <Stat label="PPG" value={num(selected.points_per_game)} />
                       <Stat label="RPG" value={num(selected.rebounds_per_game)} />
                       <Stat label="APG" value={num(selected.assists_per_game)} />
