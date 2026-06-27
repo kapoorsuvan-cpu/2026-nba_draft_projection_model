@@ -160,9 +160,9 @@ function SectionTitle({
 
 function Stat({ label, value }: { label: string; value: string | number }) {
   return (
-    <div className="rounded-2xl bg-slate-100 p-3">
+    <div className="min-w-[96px] rounded-2xl bg-slate-100 px-5 py-4 text-center">
       <div className="text-xs font-medium uppercase tracking-wide text-slate-500">{label}</div>
-      <div className="mt-1 text-lg font-semibold text-slate-950">{value}</div>
+      <div className="mt-1 text-xl font-semibold text-slate-950">{value}</div>
     </div>
   );
 }
