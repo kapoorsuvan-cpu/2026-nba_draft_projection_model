@@ -402,8 +402,8 @@ export default function Page() {
               {summary.trainingSummary?.minDraftYear ?? "—"}–{summary.trainingSummary?.maxDraftYear ?? "—"}
             </div>
           </Card>
-          {["G", "F", "C"].map((pos) => {
-            const m = metricsByPosition[pos] ?? {};
+          {(["G", "F", "C"] as const).map((pos) => {
+            const m: ModelMetric = metricsByPosition[pos] ?? { position: pos };
             return (
               <Card key={pos}>
                 <div className="text-sm text-slate-500">{pos} model</div>
