@@ -1,0 +1,367 @@
+{
+  "labelDefinitions": {
+    "Star": "All-Star selection, All-NBA selection, or max contract",
+    "Rotation": "At least two 40-game, 15-MPG seasons, including one in NBA year five or later",
+    "Not NBA Level": "Met neither the Star nor Rotation benchmark"
+  },
+  "historicalOutcomeDistribution": [
+    {
+      "outcome": "Not NBA Level",
+      "count": 402,
+      "share": 0.5296442687747036
+    },
+    {
+      "outcome": "Rotation",
+      "count": 282,
+      "share": 0.3715415019762846
+    },
+    {
+      "outcome": "Star",
+      "count": 75,
+      "share": 0.09881422924901186
+    }
+  ],
+  "historicalOutcomeByPosition": [
+    {
+      "position": "C",
+      "outcome": "Not NBA Level",
+      "count": 41,
+      "total": 60,
+      "share": 0.6833333333333333
+    },
+    {
+      "position": "C",
+      "outcome": "Rotation",
+      "count": 14,
+      "total": 60,
+      "share": 0.23333333333333334
+    },
+    {
+      "position": "C",
+      "outcome": "Star",
+      "count": 5,
+      "total": 60,
+      "share": 0.08333333333333333
+    },
+    {
+      "position": "F",
+      "outcome": "Not NBA Level",
+      "count": 178,
+      "total": 336,
+      "share": 0.5297619047619048
+    },
+    {
+      "position": "F",
+      "outcome": "Rotation",
+      "count": 131,
+      "total": 336,
+      "share": 0.3898809523809524
+    },
+    {
+      "position": "F",
+      "outcome": "Star",
+      "count": 27,
+      "total": 336,
+      "share": 0.08035714285714286
+    },
+    {
+      "position": "G",
+      "outcome": "Not NBA Level",
+      "count": 183,
+      "total": 363,
+      "share": 0.5041322314049587
+    },
+    {
+      "position": "G",
+      "outcome": "Rotation",
+      "count": 137,
+      "total": 363,
+      "share": 0.3774104683195592
+    },
+    {
+      "position": "G",
+      "outcome": "Star",
+      "count": 43,
+      "total": 363,
+      "share": 0.1184573002754821
+    }
+  ],
+  "historicalOutcomeByYear": [
+    {
+      "draft_year": 2006,
+      "outcome": "Not NBA Level",
+      "count": 25
+    },
+    {
+      "draft_year": 2006,
+      "outcome": "Rotation",
+      "count": 13
+    },
+    {
+      "draft_year": 2006,
+      "outcome": "Star",
+      "count": 5
+    },
+    {
+      "draft_year": 2007,
+      "outcome": "Not NBA Level",
+      "count": 25
+    },
+    {
+      "draft_year": 2007,
+      "outcome": "Rotation",
+      "count": 18
+    },
+    {
+      "draft_year": 2007,
+      "outcome": "Star",
+      "count": 4
+    },
+    {
+      "draft_year": 2008,
+      "outcome": "Not NBA Level",
+      "count": 23
+    },
+    {
+      "draft_year": 2008,
+      "outcome": "Rotation",
+      "count": 18
+    },
+    {
+      "draft_year": 2008,
+      "outcome": "Star",
+      "count": 6
+    },
+    {
+      "draft_year": 2009,
+      "outcome": "Not NBA Level",
+      "count": 22
+    },
+    {
+      "draft_year": 2009,
+      "outcome": "Rotation",
+      "count": 17
+    },
+    {
+      "draft_year": 2009,
+      "outcome": "Star",
+      "count": 6
+    },
+    {
+      "draft_year": 2010,
+      "outcome": "Not NBA Level",
+      "count": 33
+    },
+    {
+      "draft_year": 2010,
+      "outcome": "Rotation",
+      "count": 15
+    },
+    {
+      "draft_year": 2010,
+      "outcome": "Star",
+      "count": 4
+    },
+    {
+      "draft_year": 2011,
+      "outcome": "Not NBA Level",
+      "count": 23
+    },
+    {
+      "draft_year": 2011,
+      "outcome": "Rotation",
+      "count": 16
+    },
+    {
+      "draft_year": 2011,
+      "outcome": "Star",
+      "count": 7
+    },
+    {
+      "draft_year": 2012,
+      "outcome": "Not NBA Level",
+      "count": 25
+    },
+    {
+      "draft_year": 2012,
+      "outcome": "Rotation",
+      "count": 19
+    },
+    {
+      "draft_year": 2012,
+      "outcome": "Star",
+      "count": 6
+    },
+    {
+      "draft_year": 2013,
+      "outcome": "Not NBA Level",
+      "count": 24
+    },
+    {
+      "draft_year": 2013,
+      "outcome": "Rotation",
+      "count": 20
+    },
+    {
+      "draft_year": 2013,
+      "outcome": "Star",
+      "count": 1
+    },
+    {
+      "draft_year": 2014,
+      "outcome": "Not NBA Level",
+      "count": 24
+    },
+    {
+      "draft_year": 2014,
+      "outcome": "Rotation",
+      "count": 17
+    },
+    {
+      "draft_year": 2014,
+      "outcome": "Star",
+      "count": 4
+    },
+    {
+      "draft_year": 2015,
+      "outcome": "Not NBA Level",
+      "count": 23
+    },
+    {
+      "draft_year": 2015,
+      "outcome": "Rotation",
+      "count": 19
+    },
+    {
+      "draft_year": 2015,
+      "outcome": "Star",
+      "count": 4
+    },
+    {
+      "draft_year": 2016,
+      "outcome": "Not NBA Level",
+      "count": 26
+    },
+    {
+      "draft_year": 2016,
+      "outcome": "Rotation",
+      "count": 10
+    },
+    {
+      "draft_year": 2016,
+      "outcome": "Star",
+      "count": 7
+    },
+    {
+      "draft_year": 2017,
+      "outcome": "Not NBA Level",
+      "count": 29
+    },
+    {
+      "draft_year": 2017,
+      "outcome": "Rotation",
+      "count": 15
+    },
+    {
+      "draft_year": 2017,
+      "outcome": "Star",
+      "count": 6
+    },
+    {
+      "draft_year": 2018,
+      "outcome": "Not NBA Level",
+      "count": 19
+    },
+    {
+      "draft_year": 2018,
+      "outcome": "Rotation",
+      "count": 27
+    },
+    {
+      "draft_year": 2018,
+      "outcome": "Star",
+      "count": 4
+    },
+    {
+      "draft_year": 2019,
+      "outcome": "Not NBA Level",
+      "count": 28
+    },
+    {
+      "draft_year": 2019,
+      "outcome": "Rotation",
+      "count": 20
+    },
+    {
+      "draft_year": 2019,
+      "outcome": "Star",
+      "count": 4
+    },
+    {
+      "draft_year": 2020,
+      "outcome": "Not NBA Level",
+      "count": 25
+    },
+    {
+      "draft_year": 2020,
+      "outcome": "Rotation",
+      "count": 20
+    },
+    {
+      "draft_year": 2020,
+      "outcome": "Star",
+      "count": 3
+    },
+    {
+      "draft_year": 2021,
+      "outcome": "Not NBA Level",
+      "count": 28
+    },
+    {
+      "draft_year": 2021,
+      "outcome": "Rotation",
+      "count": 18
+    },
+    {
+      "draft_year": 2021,
+      "outcome": "Star",
+      "count": 4
+    }
+  ],
+  "trainingSummary": {
+    "rows": 759,
+    "minDraftYear": 2006,
+    "maxDraftYear": 2021
+  },
+  "currentClassOutcomeDistribution": [
+    {
+      "outcome": "Not NBA Level",
+      "count": 63,
+      "share": 0.63
+    },
+    {
+      "outcome": "Rotation",
+      "count": 27,
+      "share": 0.27
+    },
+    {
+      "outcome": "Star",
+      "count": 10,
+      "share": 0.1
+    }
+  ],
+  "currentClassAverageProbabilities": [
+    {
+      "outcome": "Star",
+      "probability": 0.15844041532593903
+    },
+    {
+      "outcome": "Rotation",
+      "probability": 0.3513602825223008
+    },
+    {
+      "outcome": "Not Nba Level",
+      "probability": 0.4901993023566512
+    }
+  ]
+}

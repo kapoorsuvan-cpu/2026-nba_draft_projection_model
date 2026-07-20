@@ -52,21 +52,22 @@ NBA_API_SLEEP_SECONDS = 0.65
 CBBD_API_SLEEP_SECONDS = 0.35
 
 LABEL_THRESHOLDS = {
-    # A rotation player must have appeared in at least three distinct NBA
-    # seasons during the four-season outcome window.
-    "rotation_seasons_played_first4": 3,
+    "rotation_min_qualifying_seasons": 2,
+    "rotation_min_post_rookie_qualifying_seasons": 1,
+    "rotation_min_games_per_season": 40,
+    "rotation_min_minutes_per_game": 15,
 }
 
 TARGET_COLUMN = "nba_success_label"
 CLASS_ORDER = ["Not NBA Level", "Rotation", "Star"]
 
-# Use draft classes with enough first-four-year NBA history.
-# 2022 draftees have four seasons by the end of 2025-26.
+# A Rotation label requires an observed season in NBA year five or later.
+# The 2021 class completed year five in 2025-26; the 2022 class has not.
 ELIGIBLE_DRAFT_MIN_YEAR = 2006
-ELIGIBLE_DRAFT_MAX_YEAR = 2022
-TRAIN_MAX_DRAFT_YEAR = 2020
-TEST_MIN_DRAFT_YEAR = 2021
-TEST_MAX_DRAFT_YEAR = 2022
+ELIGIBLE_DRAFT_MAX_YEAR = 2021
+TRAIN_MAX_DRAFT_YEAR = 2019
+TEST_MIN_DRAFT_YEAR = 2020
+TEST_MAX_DRAFT_YEAR = 2021
 API_DRAFT_YEARS = list(range(ELIGIBLE_DRAFT_MIN_YEAR, ELIGIBLE_DRAFT_MAX_YEAR + 1))
 API_COLLEGE_SEASONS = list(range(ELIGIBLE_DRAFT_MIN_YEAR, ELIGIBLE_DRAFT_MAX_YEAR + 1))
 API_RECRUITING_YEARS = list(range(2013, ELIGIBLE_DRAFT_MAX_YEAR + 1))
@@ -76,7 +77,7 @@ MIN_POSITION_SAMPLE = 40
 MIN_POSITION_MODEL_SAMPLE = 10
 RANDOM_STATE = 42
 
-SPECIFIC_POSITIONS = ["PG", "SG", "SF", "PF", "C"]
+SPECIFIC_POSITIONS = ["G", "F", "C"]
 POSITION_GROUPS = ["guard", "wing", "big"]
 
 OUTCOME_COLUMNS = {
@@ -85,7 +86,9 @@ OUTCOME_COLUMNS = {
     "nba_points_per_game_first4", "nba_rebounds_per_game_first4", "nba_assists_per_game_first4",
     "nba_win_shares_first4", "nba_vorp_first4", "nba_bpm_first4", "nba_ws_per_48_first4",
     "seasons_played_first4", "second_contract_indicator", "all_star_indicator",
-    "all_nba_indicator", "max_contract_indicator", "nba_success_score", "nba_success_label", "is_star",
+    "all_nba_indicator", "max_contract_indicator", "nba_games_played_career",
+    "nba_minutes_career", "seasons_played_career", "qualifying_rotation_seasons_career",
+    "qualifying_rotation_seasons_year5_plus", "nba_success_score", "nba_success_label", "is_star",
     "is_rotation_or_better", "is_not_nba_level"
 }
 
