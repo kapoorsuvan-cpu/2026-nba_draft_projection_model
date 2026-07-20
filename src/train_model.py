@@ -36,6 +36,7 @@ from .config import (
     RANDOM_STATE,
     MIN_POSITION_MODEL_SAMPLE,
     OUTCOME_COLUMNS,
+    POSITION_MODEL_OVERRIDES,
 )
 from .features import get_feature_columns
 from .analyze_correlations_by_position import analyze_subset
@@ -562,6 +563,37 @@ def train_tabfm_candidates(train: pd.DataFrame, test: pd.DataFrame, sets: dict[s
     return [best_metrics]
 
 
+def select_best_position_models(metrics: pd.DataFrame) -> pd.DataFrame:
+    """Select each position model, honoring any documented explicit override."""
+    position_metrics = metrics[
+        metrics["model_name"].astype(str).str.startswith("position_specific_")
+    ].copy()
+    if position_metrics.empty:
+        return position_metrics
+
+    position_metrics["position"] = position_metrics["model_name"].str.replace(
+        "position_specific_", "", regex=False
+    )
+    position_metrics["cv_selection_score"] = pd.to_numeric(
+        position_metrics.get("cv_selection_score"), errors="coerce"
+    ).fillna(-np.inf)
+
+    selected = []
+    for position, group in position_metrics.groupby("position", sort=True):
+        ranked = group.sort_values(
+            ["cv_selection_score", "macro_f1"], ascending=[False, False]
+        )
+        override = POSITION_MODEL_OVERRIDES.get(str(position))
+        override_rows = ranked[ranked["algorithm"].eq(override)] if override else ranked.iloc[0:0]
+        chosen = (override_rows if not override_rows.empty else ranked).iloc[0].copy()
+        chosen["selection_reason"] = (
+            "configured_override" if not override_rows.empty else "rolling_validation"
+        )
+        selected.append(chosen)
+
+    return pd.DataFrame(selected).rename(columns={"algorithm": "best_algorithm"})
+
+
 def train_models(df: pd.DataFrame | None = None) -> pd.DataFrame:
     if df is None:
         df = pd.read_csv(PROCESSED_FILES["training_labeled"])
@@ -699,25 +731,8 @@ def train_models(df: pd.DataFrame | None = None) -> pd.DataFrame:
         REPORTS_DIR / "selected_features_by_position.csv",
     )
 
-    position_metrics = metrics[
-        metrics["model_name"].astype(str).str.startswith("position_specific_")
-    ].copy()
-    if not position_metrics.empty:
-        position_metrics["position"] = position_metrics["model_name"].str.replace(
-            "position_specific_", "", regex=False
-        )
-        position_metrics["cv_selection_score"] = pd.to_numeric(
-            position_metrics.get("cv_selection_score"), errors="coerce"
-        ).fillna(-np.inf)
-        best_positions = (
-            position_metrics.sort_values(
-                ["position", "cv_selection_score", "macro_f1"],
-                ascending=[True, False, False],
-            )
-            .groupby("position", as_index=False)
-            .head(1)
-            .rename(columns={"algorithm": "best_algorithm"})
-        )
+    best_positions = select_best_position_models(metrics)
+    if not best_positions.empty:
         write_csv(best_positions, REPORTS_DIR / "best_model_by_position.csv")
         importance_outputs = []
         for _, best_row in best_positions.iterrows():

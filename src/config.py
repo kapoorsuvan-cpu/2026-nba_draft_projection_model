@@ -79,6 +79,9 @@ RANDOM_STATE = 42
 
 SPECIFIC_POSITIONS = ["G", "F", "C"]
 POSITION_GROUPS = ["guard", "wing", "big"]
+# Centers have only ten chronological holdout examples. Use the more stable,
+# interpretable Random Forest artifact instead of the rolling-CV LightGBM pick.
+POSITION_MODEL_OVERRIDES = {"C": "random_forest"}
 
 OUTCOME_COLUMNS = {
     "nba_games_played_first4", "nba_games_started_first4", "nba_minutes_first4",

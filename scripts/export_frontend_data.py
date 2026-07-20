@@ -243,7 +243,9 @@ if not pred.empty and not inp.empty:
     export_json(df_records(prospects), OUT / "prospects.json")
 
     manifest = prospects[["player_name", "slug", "headshot_url"]].copy()
-    manifest["local_file_needed"] = "frontend/public" + manifest["headshot_url"]
+    manifest["local_file_needed"] = manifest["slug"].map(
+        lambda slug: str(OUT.parent / "headshots" / f"{slug}.jpg")
+    )
     manifest.to_csv(OUT / "headshot_manifest.csv", index=False)
     print(f"Saved {OUT / 'headshot_manifest.csv'}")
 else:

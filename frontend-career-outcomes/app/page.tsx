@@ -456,7 +456,9 @@ const selectedImportance = useMemo(() => {
             <p className="text-sm leading-6 text-slate-600">
               These are experimental model outputs evaluated on later draft classes. Position test
               samples—especially Centers—remain small, and hard labels can be misleading when
-              probabilities are close. Read metrics, probabilities, and feature coverage together.
+              probabilities are close. Random Forest is explicitly used for Centers because the
+              ten-player center holdout produced unstable, conflicting results. Read metrics,
+              probabilities, and feature coverage together.
             </p>
           </Card>
         </div>
@@ -786,8 +788,9 @@ const selectedImportance = useMemo(() => {
               <div>
                 <div className="mb-2 font-semibold text-slate-950">3. Position models</div>
                 <p>
-                  Each G, F, and C algorithm is fine-tuned with rolling draft-year validation before
-                  being scored once on untouched 2020–2021 test classes.
+                  G and F are selected by rolling draft-year validation. Center uses a documented
+                  Random Forest override because its ten-player holdout was highly unstable. All
+                  models are scored once on untouched 2020–2021 test classes.
                 </p>
               </div>
               <div>

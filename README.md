@@ -154,6 +154,8 @@ every non-TabFM candidate.
 
 The correlation reports are therefore operational inputs to position feature selection, not just dashboard diagnostics. NBA outcome fields remain excluded from every model feature set.
 
+Because the center holdout contains only ten players and produced sharply conflicting model results, `POSITION_MODEL_OVERRIDES` currently selects Random Forest for centers. Guards and forwards remain selected strictly by rolling validation.
+
 ## Important limitations
 
 - `nba_api` does not provide Basketball Reference-style VORP/BPM/Win Shares or contract values. Contract-enriched input can supply `max_contract_indicator`; otherwise it defaults to zero.

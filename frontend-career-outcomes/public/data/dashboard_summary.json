@@ -336,13 +336,13 @@
   "currentClassOutcomeDistribution": [
     {
       "outcome": "Not NBA Level",
-      "count": 63,
-      "share": 0.63
+      "count": 61,
+      "share": 0.61
     },
     {
       "outcome": "Rotation",
-      "count": 27,
-      "share": 0.27
+      "count": 29,
+      "share": 0.29
     },
     {
       "outcome": "Star",
@@ -353,15 +353,15 @@
   "currentClassAverageProbabilities": [
     {
       "outcome": "Star",
-      "probability": 0.15844041532593903
+      "probability": 0.14514645285020322
     },
     {
       "outcome": "Rotation",
-      "probability": 0.3513602825223008
+      "probability": 0.3554013017808833
     },
     {
       "outcome": "Not Nba Level",
-      "probability": 0.4901993023566512
+      "probability": 0.4994522455738044
     }
   ]
 }
