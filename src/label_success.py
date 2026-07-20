@@ -13,31 +13,24 @@ def create_success_labels(df: pd.DataFrame, thresholds: dict | None = None) -> p
     for col in [
         "nba_minutes_first4", "nba_peak_minutes_per_game_first4", "nba_win_shares_first4",
         "nba_vorp_first4", "nba_bpm_first4", "nba_games_started_first4", "second_contract_indicator",
-        "all_star_indicator", "all_nba_indicator"
+        "all_star_indicator", "all_nba_indicator", "max_contract_indicator",
+        "seasons_played_first4",
     ]:
         if col not in out.columns:
             out[col] = 0
         out[col] = pd.to_numeric(out[col], errors="coerce").fillna(0)
 
-    value_metric = out["nba_vorp_first4"]
-    if value_metric.abs().sum() == 0:
-        value_metric = out["nba_win_shares_first4"]
-    if value_metric.abs().sum() == 0:
-        value_metric = out["nba_games_started_first4"]
-    strong_value = value_metric >= value_metric.quantile(0.70)
-
-    star = (out["all_star_indicator"] == 1) | (
-        (out["nba_minutes_first4"] >= thresholds["star_minutes_first4"]) &
-        (out["nba_peak_minutes_per_game_first4"] >= thresholds["star_peak_mpg"]) &
-        strong_value
+    # Outcome classes are deliberately definition-based, not percentile-based.
+    # Star: earned an All-Star or All-NBA selection, or received a max contract.
+    star = (
+        (out["all_star_indicator"] == 1)
+        | (out["all_nba_indicator"] == 1)
+        | (out["max_contract_indicator"] == 1)
     )
-    # If season-level 15 MPG count was provided, use it; otherwise use peak MPG as proxy.
-    seasons_15 = pd.to_numeric(out.get("seasons_15mpg_first4", 0), errors="coerce").fillna(0)
+    # Rotation: sustained an NBA roster presence for at least three of the first
+    # four seasons, without meeting the Star definition.
     rotation = (~star) & (
-        (out["nba_minutes_first4"] >= thresholds["rotation_minutes_first4"]) |
-        (out["nba_peak_minutes_per_game_first4"] >= thresholds["rotation_peak_mpg"]) |
-        (seasons_15 >= thresholds["rotation_seasons_15mpg"]) |
-        (out["second_contract_indicator"] == 1)
+        out["seasons_played_first4"] >= thresholds["rotation_seasons_played_first4"]
     )
 
     out["nba_success_label"] = np.select([star, rotation], ["Star", "Rotation"], default="Not NBA Level")
@@ -54,7 +47,8 @@ def create_success_labels(df: pd.DataFrame, thresholds: dict | None = None) -> p
         0.35 * _pct_rank(out["nba_minutes_first4"]) +
         0.20 * _pct_rank(out["nba_peak_minutes_per_game_first4"]) +
         0.25 * _pct_rank(metric) +
-        0.10 * out["second_contract_indicator"] +
-        0.10 * out["all_star_indicator"]
+        0.05 * out["all_star_indicator"] +
+        0.025 * out["all_nba_indicator"] +
+        0.025 * out["max_contract_indicator"]
     )
     return out

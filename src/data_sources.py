@@ -368,6 +368,10 @@ def fetch_nba_outcomes() -> pd.DataFrame:
             "second_contract_indicator": int(first5["season_start_year"].max() >= draft_year + 4) if not first5.empty else 0,
             "all_star_indicator": all_star,
             "all_nba_indicator": all_nba,
+            # nba_api does not expose contract values. This canonical field is
+            # retained so an externally supplied contract feed can mark max
+            # deals without changing the labeling methodology.
+            "max_contract_indicator": 0,
         })
     return pd.DataFrame(rows)
 

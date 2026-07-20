@@ -4,6 +4,7 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+import joblib
 
 
 OUT = Path("frontend/public/data")
@@ -74,8 +75,84 @@ pred = safe_read("reports/espn_2026_top100_predictions.csv")
 inp = safe_read("data/processed/espn_2026_top100_model_input.csv")
 coverage = safe_read("reports/espn_2026_top100_feature_coverage.csv")
 training = safe_read("data/processed/model_training_dataset_with_labels.csv")
+
+# The repository tracks the prior exported prospect rows but intentionally
+# ignores the original report/input files. Refresh those rows with the newly
+# selected model rather than leaving stale classifications in the dashboard.
+if (pred.empty or inp.empty) and (OUT / "prospects.json").exists() and Path("models/best_model.pkl").exists():
+    existing = pd.DataFrame(json.load(open(OUT / "prospects.json")))
+    artifact = joblib.load("models/best_model.pkl")
+    feature_cols = artifact["feature_columns"]
+    X = existing.reindex(columns=feature_cols).copy()
+    games = pd.to_numeric(existing.get("games_played"), errors="coerce")
+    mpg = pd.to_numeric(existing.get("minutes_per_game"), errors="coerce")
+    for stem in ["points", "rebounds", "assists", "steals", "blocks"]:
+        per_game = pd.to_numeric(existing.get(f"{stem}_per_game"), errors="coerce")
+        if stem in X:
+            X[stem] = per_game * games
+        if f"{stem}_per_40" in X:
+            X[f"{stem}_per_40"] = per_game * 40 / mpg.replace(0, np.nan)
+    if "defensive_event_score" in X:
+        X["defensive_event_score"] = 0.55 * X.get("steals_per_40") + 0.45 * X.get("blocks_per_40")
+    if "stock_rate_per_40" in X:
+        X["stock_rate_per_40"] = X.get("steals_per_40") + X.get("blocks_per_40")
+    if "log_recruiting_rank" in X:
+        X["log_recruiting_rank"] = np.log1p(pd.to_numeric(existing.get("recruiting_rank"), errors="coerce"))
+    if "is_high_major" in X:
+        high_major = {"ACC", "Big Ten", "Big 12", "Big East", "SEC", "Pac-12"}
+        X["is_high_major"] = existing.get("conference", pd.Series(index=existing.index)).isin(high_major).astype(int)
+
+    probabilities = artifact["pipeline"].predict_proba(X)
+    classes = list(artifact["classes"])
+    pred = pd.DataFrame({
+        "player_name": existing["player_name"],
+        "predicted_label": [classes[i] for i in probabilities.argmax(axis=1)],
+        "confidence": probabilities.max(axis=1),
+        "model_algorithm": artifact["algorithm"],
+    })
+    for label, output_col in [
+        ("Star", "prob_star"),
+        ("Rotation", "prob_rotation"),
+        ("Not NBA Level", "prob_not_nba_level"),
+    ]:
+        pred[output_col] = probabilities[:, classes.index(label)] if label in classes else 0.0
+    summary = safe_read("reports/best_model_summary.csv")
+    pred["model_macro_f1"] = summary.iloc[0].get("macro_f1") if not summary.empty else np.nan
+    pred["model_test_n"] = summary.iloc[0].get("test_n") if not summary.empty else np.nan
+    old_prediction_cols = [
+        "predicted_label", "prob_star", "prob_rotation", "prob_not_nba_level",
+        "confidence", "model_algorithm", "model_macro_f1", "model_test_n",
+    ]
+    inp = existing.drop(columns=old_prediction_cols, errors="ignore")
+    inp["feature_coverage_pct"] = X.notna().mean(axis=1) * 100
 best = safe_read("reports/best_model_by_position.csv")
+if best.empty:
+    comparison = safe_read("reports/model_comparison_overall.csv")
+    if not comparison.empty:
+        selected = comparison.get("selected_model", pd.Series(False, index=comparison.index)).fillna(False)
+        best = comparison[selected | comparison["algorithm"].eq("tabfm")].copy()
+        best = best.rename(columns={"algorithm": "best_algorithm"})
+        best["position"] = best["model_name"].apply(
+            lambda name: str(name).removeprefix("position_specific_")
+            if str(name).startswith("position_specific_")
+            else "Overall"
+        )
+        best = best.drop(columns=["model_path"], errors="ignore")
 fi = safe_read("reports/best_model_feature_importance_by_position.csv")
+if fi.empty and Path("models/best_model.pkl").exists():
+    artifact = joblib.load("models/best_model.pkl")
+    pipeline = artifact.get("pipeline")
+    if pipeline is not None and hasattr(pipeline, "named_steps"):
+        estimator = pipeline.named_steps.get("model")
+        preprocessor = pipeline.named_steps.get("preprocess")
+        if hasattr(estimator, "feature_importances_") and preprocessor is not None:
+            names = preprocessor.get_feature_names_out()
+            fi = pd.DataFrame({
+                "position": str(artifact.get("model_name", "Overall")).removeprefix("position_specific_"),
+                "feature": names,
+                "importance": estimator.feature_importances_,
+                "algorithm": artifact.get("algorithm"),
+            }).sort_values("importance", ascending=False)
 
 
 # -----------------------------
@@ -156,7 +233,13 @@ else:
 # -----------------------------
 # Dashboard summary
 # -----------------------------
-dashboard = {}
+dashboard = {
+    "labelDefinitions": {
+        "Star": "All-Star selection, All-NBA selection, or max contract",
+        "Rotation": "At least three NBA seasons in the first four without meeting the Star definition",
+        "Not NBA Level": "Met neither the Star nor Rotation benchmark",
+    }
+}
 
 if not training.empty:
     label_col = "nba_success_label"

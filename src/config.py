@@ -52,11 +52,9 @@ NBA_API_SLEEP_SECONDS = 0.65
 CBBD_API_SLEEP_SECONDS = 0.35
 
 LABEL_THRESHOLDS = {
-    "star_minutes_first4": 6000,
-    "star_peak_mpg": 28,
-    "rotation_minutes_first4": 2000,
-    "rotation_peak_mpg": 18,
-    "rotation_seasons_15mpg": 2,
+    # A rotation player must have appeared in at least three distinct NBA
+    # seasons during the four-season outcome window.
+    "rotation_seasons_played_first4": 3,
 }
 
 TARGET_COLUMN = "nba_success_label"
@@ -87,7 +85,7 @@ OUTCOME_COLUMNS = {
     "nba_points_per_game_first4", "nba_rebounds_per_game_first4", "nba_assists_per_game_first4",
     "nba_win_shares_first4", "nba_vorp_first4", "nba_bpm_first4", "nba_ws_per_48_first4",
     "seasons_played_first4", "second_contract_indicator", "all_star_indicator",
-    "all_nba_indicator", "nba_success_score", "nba_success_label", "is_star",
+    "all_nba_indicator", "max_contract_indicator", "nba_success_score", "nba_success_label", "is_star",
     "is_rotation_or_better", "is_not_nba_level"
 }
 

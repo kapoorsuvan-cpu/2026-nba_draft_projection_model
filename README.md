@@ -85,6 +85,16 @@ Excluded from training labels: 2023+
 
 This avoids using recent players whose NBA outcome is still incomplete.
 
+## Outcome definitions
+
+- **Star:** made an All-Star team, made an All-NBA team, or received a max contract.
+- **Rotation:** played in at least three of the first four NBA seasons and did not meet the Star definition.
+- **Not NBA Level:** met neither benchmark.
+
+NBA outcomes are used only to create the target label; they are never model inputs. The API-built
+dataset includes All-Star and All-NBA awards. Because `nba_api` does not publish contract values,
+`max_contract_indicator` defaults to zero unless a contract-enriched NBA outcome cache supplies it.
+
 ## Install
 
 ```bash
@@ -124,9 +134,13 @@ The pipeline will:
 8. Train and compare models
 9. Select/evaluate the best model
 
+Google TabFM 1.0.0 is evaluated on the same chronological holdout and canonical
+full feature set. It is adopted only when its holdout accuracy is strictly higher than
+every non-TabFM candidate.
+
 ## Important limitations
 
-- `nba_api` does not provide Basketball Reference-style VORP/BPM/Win Shares. Those fields are left blank and the label falls back to minutes, starts, second-contract proxy, All-Star, and All-NBA.
+- `nba_api` does not provide Basketball Reference-style VORP/BPM/Win Shares or contract values. Contract-enriched input can supply `max_contract_indicator`; otherwise it defaults to zero.
 - Second contract is inferred as appearing in a fifth NBA season after draft. That is a practical proxy, not a contract feed.
 - Recruiting is only as complete as CollegeBasketballData's recruiting endpoint.
 - Position, height, and class year may be incomplete if the source does not provide them for a player-season.

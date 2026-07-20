@@ -43,7 +43,7 @@ def clean_nba_data(df: pd.DataFrame | None = None) -> pd.DataFrame:
             if src in first4.columns:
                 val = first4.groupby(group_cols)[src].sum().reset_index(name=dst)
                 agg = agg.merge(val, on=group_cols, how="left")
-        for flag in ["second_contract_indicator", "all_star_indicator", "all_nba_indicator"]:
+        for flag in ["second_contract_indicator", "all_star_indicator", "all_nba_indicator", "max_contract_indicator"]:
             if flag in first4.columns:
                 val = first4.groupby(group_cols)[flag].max().reset_index(name=flag)
                 agg = agg.merge(val, on=group_cols, how="left")
@@ -62,7 +62,7 @@ def clean_nba_data(df: pd.DataFrame | None = None) -> pd.DataFrame:
         for target, candidates in aliases.items():
             coalesce_columns(out, candidates, target)
 
-    for col in ["second_contract_indicator", "all_star_indicator", "all_nba_indicator"]:
+    for col in ["second_contract_indicator", "all_star_indicator", "all_nba_indicator", "max_contract_indicator"]:
         if col not in out.columns:
             out[col] = 0
         out[col] = pd.to_numeric(out[col], errors="coerce").fillna(0).astype(int)

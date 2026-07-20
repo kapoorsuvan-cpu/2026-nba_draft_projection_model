@@ -12,3 +12,4 @@ cbbd>=1.27.3
 shap>=0.44
 xgboost>=2.0
 lightgbm>=4.0
+tabfm[jax]==1.0.0

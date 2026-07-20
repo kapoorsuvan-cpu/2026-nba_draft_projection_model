@@ -23,6 +23,27 @@ def compare_and_select_best(metrics: pd.DataFrame | None = None) -> pd.DataFrame
     )
     ranked = metrics.sort_values("selection_score", ascending=False)
     best = ranked.iloc[0].to_dict()
+
+    # Honor the explicit TabFM adoption rule: use it when its chronological
+    # holdout accuracy is strictly higher than every comparable global
+    # non-TabFM candidate. Position models use different row subsets.
+    tabfm_rows = metrics[metrics["algorithm"] == "tabfm"]
+    global_mask = ~metrics["model_name"].astype(str).str.startswith(
+        ("position_specific_", "position_group_")
+    )
+    other_rows = metrics[(metrics["algorithm"] != "tabfm") & global_mask]
+    if not tabfm_rows.empty and (
+        other_rows.empty
+        or tabfm_rows["accuracy"].max() > other_rows["accuracy"].max()
+    ):
+        best = tabfm_rows.sort_values(
+            ["accuracy", "macro_f1", "balanced_accuracy"], ascending=False
+        ).iloc[0].to_dict()
+
+    ranked["selected_model"] = ranked["model_path"] == best["model_path"]
+    ranked = ranked.sort_values(
+        ["selected_model", "selection_score"], ascending=[False, False]
+    )
     shutil.copyfile(best["model_path"], MODELS_DIR / "best_model.pkl")
 
     df = pd.read_csv(PROCESSED_FILES["training_labeled"])
@@ -33,7 +54,7 @@ def compare_and_select_best(metrics: pd.DataFrame | None = None) -> pd.DataFrame
         "training_years": [int(df["draft_year"].min()), int(df[df["draft_year"] <= 2019]["draft_year"].max())] if "draft_year" in df else None,
         "test_years": [int(df[df["draft_year"] >= 2020]["draft_year"].min()), int(df["draft_year"].max())] if "draft_year" in df else None,
         "feature_list": artifact.get("feature_columns", []),
-        "target_label_definition": "Star / Rotation / Not NBA Level using first-four NBA season outcomes; NBA outcomes are labels only, never model inputs.",
+        "target_label_definition": "Star = All-Star, All-NBA, or max-contract recipient; Rotation = at least three NBA seasons in the first four without meeting Star criteria; all others = Not NBA Level. NBA outcomes are labels only, never model inputs.",
         "class_distribution": df[TARGET_COLUMN].value_counts(dropna=False).to_dict() if TARGET_COLUMN in df else {},
         "performance_metrics": {k: best.get(k) for k in ["macro_f1", "weighted_f1", "balanced_accuracy", "accuracy", "log_loss", "brier_score", "ovr_roc_auc", "lift_over_draft_pick_baseline"]},
         "whether_draft_pick_was_included": "draft_pick_overall" in artifact.get("feature_columns", []),

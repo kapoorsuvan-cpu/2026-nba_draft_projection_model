@@ -263,6 +263,89 @@ def train_one_model(train, test, cols, algorithm_name, estimator, model_name):
     return metrics
 
 
+def train_tabfm_candidates(train: pd.DataFrame, test: pd.DataFrame, sets: dict[str, list[str]]):
+    """Evaluate Google TabFM on the same global feature sets and holdout.
+
+    TabFM performs its own mixed-type encoding and in-context inference, so the
+    raw feature frame is passed directly. Only the best TabFM feature-set
+    artifact is persisted to avoid serializing the foundation weights once per
+    feature set.
+    """
+    try:
+        from .tabfm_adapter import LazyTabFMClassifier, load_tabfm_model
+    except Exception as exc:
+        logger.info("TabFM not available; skipping it: %s", exc)
+        return []
+
+    try:
+        foundation_model = load_tabfm_model()
+    except Exception as exc:
+        logger.warning("TabFM weights could not be loaded; skipping it: %s", exc)
+        return []
+
+    candidates = []
+    # Benchmark the foundation model on the canonical full feature set. The
+    # conventional suite still explores all existing ablations.
+    tabfm_sets = {"full": sets["full"]} if sets.get("full") else sets
+    for fs_name, cols in tabfm_sets.items():
+        cols = [c for c in cols if c in train.columns]
+        if not cols:
+            continue
+        try:
+            classifier = LazyTabFMClassifier(
+                model=foundation_model,
+                batch_size=2,
+                random_state=RANDOM_STATE,
+                verbose=False,
+            )
+            X_train = train[cols].copy()
+            X_test = test[cols].copy()
+            classifier.fit(X_train, train[TARGET_COLUMN])
+            proba = classifier.predict_proba(X_test)
+            labels = list(classifier.classes_)
+            metrics, _ = evaluate_predictions(test[TARGET_COLUMN], proba, labels)
+            metrics.update(
+                {
+                    "model_name": fs_name,
+                    "algorithm": "tabfm",
+                    "feature_set": fs_name,
+                    "n_features": len(cols),
+                    "train_n": len(train),
+                    "test_n": len(test),
+                }
+            )
+            candidates.append(
+                (
+                    metrics,
+                    {
+                        "pipeline": classifier,
+                        "feature_columns": cols,
+                        "classes": labels,
+                        "model_name": fs_name,
+                        "algorithm": "tabfm",
+                    },
+                )
+            )
+        except Exception as exc:
+            logger.warning("TabFM failed: feature_set=%s error=%s", fs_name, exc)
+
+    if not candidates:
+        return []
+
+    best_metrics, best_artifact = max(
+        candidates,
+        key=lambda item: (
+            item[0].get("accuracy", float("-inf")),
+            item[0].get("macro_f1", float("-inf")),
+            item[0].get("balanced_accuracy", float("-inf")),
+        ),
+    )
+    model_path = MODELS_DIR / "tabfm_best.pkl"
+    joblib.dump(best_artifact, model_path)
+    best_metrics["model_path"] = str(model_path)
+    return [best_metrics]
+
+
 def train_models(df: pd.DataFrame | None = None) -> pd.DataFrame:
     if df is None:
         df = pd.read_csv(PROCESSED_FILES["training_labeled"])
@@ -274,7 +357,8 @@ def train_models(df: pd.DataFrame | None = None) -> pd.DataFrame:
     rows = []
     algos = candidate_algorithms()
 
-    for fs_name, cols in feature_sets(df).items():
+    sets = feature_sets(df)
+    for fs_name, cols in sets.items():
         if not cols:
             continue
 
@@ -288,6 +372,11 @@ def train_models(df: pd.DataFrame | None = None) -> pd.DataFrame:
                     algo_name,
                     e,
                 )
+
+    # TabFM is compared using the identical chronological split and global
+    # feature-set methodology. Position subsets are intentionally not used for
+    # model selection because their holdout sample sizes are not comparable.
+    rows.extend(train_tabfm_candidates(train, test, sets))
 
     # Position-specific models where sample size allows.
     for pos in sorted(df.get("primary_position", pd.Series(dtype=str)).dropna().unique()):
