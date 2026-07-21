@@ -13,6 +13,7 @@ frontend/.next/
 frontend/.vercel/
 frontend/out/
 frontend/.env*
+frontend-career-outcomes/.env*
 
 # Large model/data folders not needed by Vercel frontend
 data/

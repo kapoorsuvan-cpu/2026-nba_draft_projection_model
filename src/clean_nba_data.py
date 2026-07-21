@@ -9,7 +9,7 @@ logger = logging.getLogger(__name__)
 
 
 def clean_nba_data(df: pd.DataFrame | None = None) -> pd.DataFrame:
-    """Clean either already-aggregated first-four-year NBA outcomes or season-level rows.
+    """Clean either aggregated NBA outcomes or season-level rows.
 
     If season-level rows include nba_season_index or years_since_draft, only first four
     seasons are aggregated. Otherwise the function assumes the raw file is already at
@@ -43,7 +43,7 @@ def clean_nba_data(df: pd.DataFrame | None = None) -> pd.DataFrame:
             if src in first4.columns:
                 val = first4.groupby(group_cols)[src].sum().reset_index(name=dst)
                 agg = agg.merge(val, on=group_cols, how="left")
-        for flag in ["second_contract_indicator", "all_star_indicator", "all_nba_indicator"]:
+        for flag in ["second_contract_indicator", "all_star_indicator", "all_nba_indicator", "max_contract_indicator"]:
             if flag in first4.columns:
                 val = first4.groupby(group_cols)[flag].max().reset_index(name=flag)
                 agg = agg.merge(val, on=group_cols, how="left")
@@ -62,10 +62,17 @@ def clean_nba_data(df: pd.DataFrame | None = None) -> pd.DataFrame:
         for target, candidates in aliases.items():
             coalesce_columns(out, candidates, target)
 
-    for col in ["second_contract_indicator", "all_star_indicator", "all_nba_indicator"]:
+    for col in ["second_contract_indicator", "all_star_indicator", "all_nba_indicator", "max_contract_indicator"]:
         if col not in out.columns:
             out[col] = 0
         out[col] = pd.to_numeric(out[col], errors="coerce").fillna(0).astype(int)
+    for col in [
+        "nba_games_played_career", "nba_minutes_career", "seasons_played_career",
+        "qualifying_rotation_seasons_career", "qualifying_rotation_seasons_year5_plus",
+    ]:
+        if col not in out.columns:
+            out[col] = 0
+        out[col] = pd.to_numeric(out[col], errors="coerce").fillna(0)
     out["nba_minutes_per_game_first4"] = out.get("nba_minutes_per_game_first4", out["nba_minutes_first4"] / out.get("nba_games_played_first4", np.nan))
     write_csv(out, INTERIM_FILES["nba_clean"])
     logger.info("Saved NBA outcomes: %s rows", len(out))

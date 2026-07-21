@@ -342,6 +342,11 @@ def get_feature_columns(
         c = str(col)
         lc = c.lower()
 
+        # OUTCOME_COLUMNS is the authoritative boundary. Pattern checks below
+        # are defense in depth for unexpected API/merge variants.
+        if c in OUTCOME_COLUMNS:
+            continue
+
         if c in noisy_exact_cols:
             continue
 

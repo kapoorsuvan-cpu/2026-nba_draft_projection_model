@@ -5,7 +5,7 @@ from sklearn.feature_selection import mutual_info_regression, mutual_info_classi
 from sklearn.linear_model import LinearRegression
 from .config import PROCESSED_FILES, REPORTS_DIR, SPECIFIC_POSITIONS, POSITION_GROUPS, MIN_POSITION_SAMPLE
 from .features import get_feature_columns
-from .utils import numeric_columns, write_csv
+from .utils import write_csv
 
 logger = logging.getLogger(__name__)
 
@@ -44,7 +44,25 @@ def _mi(x: pd.Series, y: pd.Series, discrete_target: bool) -> float:
 
 
 def analyze_subset(df: pd.DataFrame, subset_name: str) -> pd.DataFrame:
-    features = numeric_columns(df, exclude=TARGETS)
+    # pandas cannot concatenate an empty Series with a zero-column DataFrame
+    # whose index has a different inferred dtype. Empty legacy position groups
+    # should simply produce an empty report.
+    if df.empty:
+        return pd.DataFrame(columns=[
+            "subset", "sample_size", "small_sample_warning", "target",
+            "analysis_type", "feature", "pearson", "spearman",
+            "mutual_information", "n_pairwise", "abs_spearman", "rank_score",
+        ])
+    # Correlate outcomes only against information known before the NBA career.
+    # get_feature_columns applies the same authoritative leakage boundary used
+    # by model training.
+    safe_features = get_feature_columns(
+        df, include_draft_pick=True, include_position=False
+    )
+    features = [
+        c for c in safe_features
+        if c in df.columns and pd.api.types.is_numeric_dtype(df[c])
+    ]
     rows = []
     n = len(df)
     warning = n < MIN_POSITION_SAMPLE
@@ -95,12 +113,14 @@ def run_position_correlation_analysis(df: pd.DataFrame | None = None) -> pd.Data
         sub = df[df.get("primary_position", "").astype(str).str.upper() == pos].copy()
         res = analyze_subset(sub, pos)
         write_csv(res, REPORTS_DIR / f"correlation_by_position_{pos.lower()}.csv")
-        outputs.append(res)
+        if not res.empty:
+            outputs.append(res)
     for group in POSITION_GROUPS:
         sub = df[df.get("position_group", "").astype(str).str.lower() == group].copy()
         res = analyze_subset(sub, group)
         write_csv(res, REPORTS_DIR / f"correlation_by_position_group_{group}.csv")
-        outputs.append(res)
+        if not res.empty:
+            outputs.append(res)
     summary = pd.concat(outputs, ignore_index=True) if outputs else pd.DataFrame()
     if not summary.empty:
         summary = summary.sort_values(["subset", "target", "analysis_type", "rank_score"], ascending=[True, True, True, False])

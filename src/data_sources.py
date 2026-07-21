@@ -300,11 +300,10 @@ def fetch_draft_results() -> pd.DataFrame:
 
 
 def fetch_nba_outcomes() -> pd.DataFrame:
-    """Build first-four-season NBA outcomes from nba_api career stats.
+    """Build career outcomes and first-four-season diagnostics from nba_api.
 
     This uses only outcome-label fields. It does not feed NBA stats into model features.
-    VORP/BPM/Win Shares are not available through nba_api, so those columns are left blank
-    and label_success.py falls back to minutes, starts, second contract, and All-Star.
+    NBA statistics are outcome labels/diagnostics only and never model inputs.
     """
     draft = load_draft_results()
     if draft.empty:
@@ -314,6 +313,7 @@ def fetch_nba_outcomes() -> pd.DataFrame:
     except ImportError as exc:
         raise RuntimeError("Install nba_api with `pip install nba_api` to fetch NBA outcomes.") from exc
 
+    draft = draft[pd.to_numeric(draft["draft_year"], errors="coerce").isin(API_DRAFT_YEARS)]
     rows = []
     for _, drow in draft.iterrows():
         person_id = drow.get("nba_person_id")
@@ -344,8 +344,20 @@ def fetch_nba_outcomes() -> pd.DataFrame:
         apg = _weighted_rate(first4, "ast", "gp")
         peak_mpg = (minutes / gp.replace(0, np.nan)).max()
         seasons_15mpg = int(((minutes / gp.replace(0, np.nan)) >= 15).sum())
-        all_star = _get_award_indicator(person_id, draft_year, draft_year + 3, playerawards, ["all-star", "all star"])
-        all_nba = _get_award_indicator(person_id, draft_year, draft_year + 3, playerawards, ["all-nba", "all nba"])
+        career_by_season = season_df.assign(
+            gp_numeric=pd.to_numeric(season_df.get("gp"), errors="coerce").fillna(0),
+            min_numeric=pd.to_numeric(season_df.get("min"), errors="coerce").fillna(0),
+        ).groupby("season_start_year", as_index=False).agg(
+            gp=("gp_numeric", "max"),
+            minutes=("min_numeric", "max"),
+        )
+        career_by_season["mpg"] = (
+            career_by_season["minutes"] / career_by_season["gp"].replace(0, np.nan)
+        )
+        qualifying = career_by_season[
+            (career_by_season["gp"] >= 40) & (career_by_season["mpg"] >= 15)
+        ]
+        awards = _get_career_award_indicators(person_id, playerawards)
         rows.append({
             "nba_person_id": person_id,
             "player_name": player_name,
@@ -366,8 +378,19 @@ def fetch_nba_outcomes() -> pd.DataFrame:
             "seasons_15mpg_first4": seasons_15mpg,
             # A practical proxy: appeared in any fifth NBA season after draft.
             "second_contract_indicator": int(first5["season_start_year"].max() >= draft_year + 4) if not first5.empty else 0,
-            "all_star_indicator": all_star,
-            "all_nba_indicator": all_nba,
+            "nba_games_played_career": career_by_season["gp"].sum(),
+            "nba_minutes_career": career_by_season["minutes"].sum(),
+            "seasons_played_career": career_by_season["season_start_year"].nunique(),
+            "qualifying_rotation_seasons_career": len(qualifying),
+            "qualifying_rotation_seasons_year5_plus": int(
+                (qualifying["season_start_year"] >= draft_year + 4).sum()
+            ),
+            "all_star_indicator": awards["all_star_indicator"],
+            "all_nba_indicator": awards["all_nba_indicator"],
+            # nba_api does not expose contract values. This canonical field is
+            # retained so an externally supplied contract feed can mark max
+            # deals without changing the labeling methodology.
+            "max_contract_indicator": 0,
         })
     return pd.DataFrame(rows)
 
@@ -380,23 +403,21 @@ def _weighted_rate(df: pd.DataFrame, numerator: str, denominator: str) -> float:
     return num / den if den else np.nan
 
 
-def _get_award_indicator(person_id: Any, start_year: int, end_year: int, playerawards_module, award_terms: list[str]) -> int:
+def _get_career_award_indicators(person_id: Any, playerawards_module) -> dict[str, int]:
     try:
         awards = playerawards_module.PlayerAwards(player_id=int(person_id)).get_data_frames()[0]
         awards = _clean_api_columns(awards)
         time.sleep(0.15)
     except Exception:
-        return 0
+        return {"all_star_indicator": 0, "all_nba_indicator": 0}
     if awards.empty:
-        return 0
+        return {"all_star_indicator": 0, "all_nba_indicator": 0}
     text_cols = [c for c in awards.columns if any(term in c for term in ["award", "description", "name"])]
-    year_cols = [c for c in awards.columns if "season" in c or "year" in c]
     award_text = awards[text_cols].astype(str).agg(" ".join, axis=1).str.lower() if text_cols else pd.Series([""] * len(awards))
-    year_text = awards[year_cols].astype(str).agg(" ".join, axis=1) if year_cols else pd.Series([""] * len(awards))
-    year_num = pd.to_numeric(year_text.str.extract(r"(\d{4})")[0], errors="coerce")
-    in_window = year_num.between(start_year, end_year) | year_num.isna()
-    has_award = award_text.apply(lambda s: any(term in s for term in award_terms))
-    return int((in_window & has_award).any())
+    return {
+        "all_star_indicator": int(award_text.str.contains(r"all[ -]star", regex=True).any()),
+        "all_nba_indicator": int(award_text.str.contains(r"all[ -]nba", regex=True).any()),
+    }
 
 
 def load_historical_college_stats() -> pd.DataFrame:

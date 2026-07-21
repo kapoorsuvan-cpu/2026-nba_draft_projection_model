@@ -81,6 +81,7 @@ type FeatureImportance = {
 };
 
 type DashboardSummary = {
+  labelDefinitions?: Record<string, string>;
   trainingSummary?: {
     rows?: number;
     minDraftYear?: number;
@@ -765,8 +766,8 @@ const selectedImportance = useMemo(() => {
               <div>
                 <div className="mb-2 font-semibold text-slate-950">1. Historical labels</div>
                 <p>
-                  Historical drafted players are labeled by NBA outcome using career production and
-                  role-level success signals.
+                  Star means an All-Star or All-NBA selection, or a max contract. Rotation means at
+                  least three NBA seasons in the first four; everyone else is Not NBA Level.
                 </p>
               </div>
               <div>

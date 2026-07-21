@@ -6,15 +6,18 @@ from src.compare_models import compare_and_select_best
 from src.evaluate_model import evaluate_best_model
 from src.build_2026_prospect_dataset import build_2026_prospect_dataset
 from src.predict_2026_class import predict_2026_class
-from src.config import RAW_FILES, RUN_2026_PROSPECT_PIPELINE_BY_DEFAULT
+from src.config import RAW_FILES, RUN_2026_PROSPECT_PIPELINE_BY_DEFAULT, TRAIN_MAX_DRAFT_YEAR
 
 
 def main():
     logger = setup_logging()
     logger.info("1/7 Building historical training dataset")
     training = build_training_dataset()
-    logger.info("2/7 Running position-level correlation analysis")
-    run_position_correlation_analysis(training)
+    logger.info("2/7 Running train-only position-level correlation analysis")
+    analysis_train = training[
+        training["draft_year"].astype(float) <= TRAIN_MAX_DRAFT_YEAR
+    ].copy()
+    run_position_correlation_analysis(analysis_train)
     logger.info("3/7 Training model suite")
     metrics = train_models(training)
     logger.info("4/7 Selecting best model")

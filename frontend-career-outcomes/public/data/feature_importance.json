@@ -1,0 +1,401 @@
+[
+  {
+    "position": "C",
+    "feature": "recruiting_rank",
+    "importance": 0.0196078431372548,
+    "importance_std": 0.0588235294117647,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "C",
+    "feature": "recruiting_stars",
+    "importance": 0.0,
+    "importance_std": 0.0,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "C",
+    "feature": "assists",
+    "importance": 0.0,
+    "importance_std": 0.0,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "C",
+    "feature": "assists_per_game",
+    "importance": 0.0,
+    "importance_std": 0.0,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "C",
+    "feature": "turnovers",
+    "importance": 0.0392156862745097,
+    "importance_std": 0.0784313725490195,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "C",
+    "feature": "blocks_per_40",
+    "importance": 0.2813897488820089,
+    "importance_std": 0.1825296854226477,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "C",
+    "feature": "games_played",
+    "importance": 0.0,
+    "importance_std": 0.0,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "C",
+    "feature": "turnovers_per_game",
+    "importance": 0.0,
+    "importance_std": 0.0,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "C",
+    "feature": "rebounds",
+    "importance": 0.0,
+    "importance_std": 0.0,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "C",
+    "feature": "minutes_per_game",
+    "importance": 0.0392156862745097,
+    "importance_std": 0.0784313725490195,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "C",
+    "feature": "is_high_major",
+    "importance": 0.0,
+    "importance_std": 0.0,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "C",
+    "feature": "games_started",
+    "importance": 0.0,
+    "importance_std": 0.0,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "C",
+    "feature": "blocks",
+    "importance": 0.1764705882352941,
+    "importance_std": 0.0588235294117647,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "C",
+    "feature": "turnovers_per_40",
+    "importance": 0.0,
+    "importance_std": 0.0,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "C",
+    "feature": "rebounds_per_40",
+    "importance": 0.0392156862745097,
+    "importance_std": 0.0784313725490195,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "C",
+    "feature": "minutes",
+    "importance": 0.0526315789473684,
+    "importance_std": 0.1578947368421052,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "C",
+    "feature": "personal_fouls_per_game",
+    "importance": 0.0,
+    "importance_std": 0.0,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "C",
+    "feature": "points_per_40",
+    "importance": 0.0,
+    "importance_std": 0.0,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "C",
+    "feature": "conference",
+    "importance": 0.0,
+    "importance_std": 0.0,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "F",
+    "feature": "log_recruiting_rank",
+    "importance": 0.2321639951120663,
+    "importance_std": 0.1652097043030353,
+    "algorithm": "hist_gradient_boosting"
+  },
+  {
+    "position": "F",
+    "feature": "recruiting_rating",
+    "importance": 0.3382709082709082,
+    "importance_std": 0.0076006408516338,
+    "algorithm": "hist_gradient_boosting"
+  },
+  {
+    "position": "F",
+    "feature": "games_started",
+    "importance": 0.2785530805530806,
+    "importance_std": 0.110244263248759,
+    "algorithm": "hist_gradient_boosting"
+  },
+  {
+    "position": "F",
+    "feature": "rebounds",
+    "importance": 0.1474720279426161,
+    "importance_std": 0.0466014042941945,
+    "algorithm": "hist_gradient_boosting"
+  },
+  {
+    "position": "F",
+    "feature": "points",
+    "importance": 0.0919945403278736,
+    "importance_std": 0.0689198446878398,
+    "algorithm": "hist_gradient_boosting"
+  },
+  {
+    "position": "F",
+    "feature": "points_per_40",
+    "importance": 0.2635934586179684,
+    "importance_std": 0.1194637259702944,
+    "algorithm": "hist_gradient_boosting"
+  },
+  {
+    "position": "F",
+    "feature": "steals",
+    "importance": 0.0698506923212805,
+    "importance_std": 0.0586095052434098,
+    "algorithm": "hist_gradient_boosting"
+  },
+  {
+    "position": "F",
+    "feature": "rebounds_per_game",
+    "importance": 0.0380027416457622,
+    "importance_std": 0.0191958237235897,
+    "algorithm": "hist_gradient_boosting"
+  },
+  {
+    "position": "F",
+    "feature": "steals_per_40",
+    "importance": 0.2327993800625379,
+    "importance_std": 0.1409445483798608,
+    "algorithm": "hist_gradient_boosting"
+  },
+  {
+    "position": "F",
+    "feature": "minutes",
+    "importance": 0.0474117184218603,
+    "importance_std": 0.0426179244132521,
+    "algorithm": "hist_gradient_boosting"
+  },
+  {
+    "position": "F",
+    "feature": "assists",
+    "importance": 0.1546211578664401,
+    "importance_std": 0.1292935594210191,
+    "algorithm": "hist_gradient_boosting"
+  },
+  {
+    "position": "F",
+    "feature": "usage_rate",
+    "importance": 0.1380116569528334,
+    "importance_std": 0.0974653989472332,
+    "algorithm": "hist_gradient_boosting"
+  },
+  {
+    "position": "F",
+    "feature": "games_played",
+    "importance": 0.1215064185064184,
+    "importance_std": 0.0784027688895884,
+    "algorithm": "hist_gradient_boosting"
+  },
+  {
+    "position": "F",
+    "feature": "turnovers",
+    "importance": 0.2956215787794735,
+    "importance_std": 0.1204509417551887,
+    "algorithm": "hist_gradient_boosting"
+  },
+  {
+    "position": "F",
+    "feature": "rebounds_per_40",
+    "importance": 0.2573471329776799,
+    "importance_std": 0.1601481855082497,
+    "algorithm": "hist_gradient_boosting"
+  },
+  {
+    "position": "F",
+    "feature": "personal_fouls",
+    "importance": 0.1931522794267892,
+    "importance_std": 0.0347019471968702,
+    "algorithm": "hist_gradient_boosting"
+  },
+  {
+    "position": "F",
+    "feature": "blocks",
+    "importance": 0.1181468053161416,
+    "importance_std": 0.1441748670673955,
+    "algorithm": "hist_gradient_boosting"
+  },
+  {
+    "position": "F",
+    "feature": "defensive_event_score",
+    "importance": 0.1231047411371954,
+    "importance_std": 0.0402142584077021,
+    "algorithm": "hist_gradient_boosting"
+  },
+  {
+    "position": "F",
+    "feature": "conference",
+    "importance": 0.0734061754061753,
+    "importance_std": 0.1422529623398775,
+    "algorithm": "hist_gradient_boosting"
+  },
+  {
+    "position": "G",
+    "feature": "recruiting_stars",
+    "importance": 0.0134927576118842,
+    "importance_std": 0.0132613770057965,
+    "algorithm": "xgboost"
+  },
+  {
+    "position": "G",
+    "feature": "recruiting_rating",
+    "importance": 0.0015506369795449,
+    "importance_std": 0.0101097954421938,
+    "algorithm": "xgboost"
+  },
+  {
+    "position": "G",
+    "feature": "log_recruiting_rank",
+    "importance": -0.0068832767193423,
+    "importance_std": 0.0056201719069224,
+    "algorithm": "xgboost"
+  },
+  {
+    "position": "G",
+    "feature": "stock_rate_per_40",
+    "importance": 0.011565064777943,
+    "importance_std": 0.010796581453082,
+    "algorithm": "xgboost"
+  },
+  {
+    "position": "G",
+    "feature": "steals_per_40",
+    "importance": -0.0048149656228281,
+    "importance_std": 0.0158631639296339,
+    "algorithm": "xgboost"
+  },
+  {
+    "position": "G",
+    "feature": "steals",
+    "importance": -0.0183957046148693,
+    "importance_std": 0.023722670684998,
+    "algorithm": "xgboost"
+  },
+  {
+    "position": "G",
+    "feature": "games_played",
+    "importance": -0.001147212786557,
+    "importance_std": 0.0034416383596711,
+    "algorithm": "xgboost"
+  },
+  {
+    "position": "G",
+    "feature": "minutes_per_game",
+    "importance": -0.005360806964434,
+    "importance_std": 0.0392272281153448,
+    "algorithm": "xgboost"
+  },
+  {
+    "position": "G",
+    "feature": "rebounds_per_40",
+    "importance": -0.0540904432072256,
+    "importance_std": 0.0572514242927658,
+    "algorithm": "xgboost"
+  },
+  {
+    "position": "G",
+    "feature": "rebounds",
+    "importance": -0.0061015453120338,
+    "importance_std": 0.0181017615300805,
+    "algorithm": "xgboost"
+  },
+  {
+    "position": "G",
+    "feature": "blocks",
+    "importance": 0.0259650238075834,
+    "importance_std": 0.0313113868672836,
+    "algorithm": "xgboost"
+  },
+  {
+    "position": "G",
+    "feature": "personal_fouls",
+    "importance": -0.0109916245488992,
+    "importance_std": 0.0098645815260294,
+    "algorithm": "xgboost"
+  },
+  {
+    "position": "G",
+    "feature": "is_high_major",
+    "importance": 0.0115830996027249,
+    "importance_std": 0.0100908591825468,
+    "algorithm": "xgboost"
+  },
+  {
+    "position": "G",
+    "feature": "turnovers_per_game",
+    "importance": 0.0051854418807126,
+    "importance_std": 0.0176804779874591,
+    "algorithm": "xgboost"
+  },
+  {
+    "position": "G",
+    "feature": "turnovers_per_40",
+    "importance": -0.0021534536686406,
+    "importance_std": 0.0141537593380505,
+    "algorithm": "xgboost"
+  },
+  {
+    "position": "G",
+    "feature": "personal_fouls_per_game",
+    "importance": -0.0157283336502937,
+    "importance_std": 0.0180044740909591,
+    "algorithm": "xgboost"
+  },
+  {
+    "position": "G",
+    "feature": "assists_per_40",
+    "importance": -0.0177970294185324,
+    "importance_std": 0.0079315921021229,
+    "algorithm": "xgboost"
+  },
+  {
+    "position": "G",
+    "feature": "points_per_game",
+    "importance": -0.0152554008062671,
+    "importance_std": 0.0144615593086035,
+    "algorithm": "xgboost"
+  },
+  {
+    "position": "G",
+    "feature": "conference",
+    "importance": 0.013297918887054,
+    "importance_std": 0.0100930472724099,
+    "algorithm": "xgboost"
+  }
+]

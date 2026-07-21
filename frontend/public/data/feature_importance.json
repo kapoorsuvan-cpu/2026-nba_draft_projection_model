@@ -1,542 +1,314 @@
 [
   {
-    "position": "G",
-    "model_name": "position_specific_G",
-    "algorithm": "random_forest",
-    "macro_f1": 0.3208875788094653,
-    "balanced_accuracy": 0.3111672278338945,
-    "feature": "num__minutes_per_game",
-    "importance": 0.0410201450893572
-  },
-  {
-    "position": "G",
-    "model_name": "position_specific_G",
-    "algorithm": "random_forest",
-    "macro_f1": 0.3208875788094653,
-    "balanced_accuracy": 0.3111672278338945,
-    "feature": "num__blocks_per_game",
-    "importance": 0.0409561939962119
-  },
-  {
-    "position": "G",
-    "model_name": "position_specific_G",
-    "algorithm": "random_forest",
-    "macro_f1": 0.3208875788094653,
-    "balanced_accuracy": 0.3111672278338945,
-    "feature": "num__defensive_event_score",
-    "importance": 0.0408668619940873
-  },
-  {
-    "position": "G",
-    "model_name": "position_specific_G",
-    "algorithm": "random_forest",
-    "macro_f1": 0.3208875788094653,
-    "balanced_accuracy": 0.3111672278338945,
-    "feature": "num__steals",
-    "importance": 0.0396746258566096
-  },
-  {
-    "position": "G",
-    "model_name": "position_specific_G",
-    "algorithm": "random_forest",
-    "macro_f1": 0.3208875788094653,
-    "balanced_accuracy": 0.3111672278338945,
-    "feature": "num__steals_per_40",
-    "importance": 0.0393232733223566
-  },
-  {
-    "position": "G",
-    "model_name": "position_specific_G",
-    "algorithm": "random_forest",
-    "macro_f1": 0.3208875788094653,
-    "balanced_accuracy": 0.3111672278338945,
-    "feature": "num__stock_rate_per_40",
-    "importance": 0.0382547632019676
-  },
-  {
-    "position": "G",
-    "model_name": "position_specific_G",
-    "algorithm": "random_forest",
-    "macro_f1": 0.3208875788094653,
-    "balanced_accuracy": 0.3111672278338945,
-    "feature": "num__steals_per_game",
-    "importance": 0.0362121701949081
-  },
-  {
-    "position": "G",
-    "model_name": "position_specific_G",
-    "algorithm": "random_forest",
-    "macro_f1": 0.3208875788094653,
-    "balanced_accuracy": 0.3111672278338945,
-    "feature": "num__blocks_per_40",
-    "importance": 0.0359425327338264
-  },
-  {
-    "position": "G",
-    "model_name": "position_specific_G",
-    "algorithm": "random_forest",
-    "macro_f1": 0.3208875788094653,
-    "balanced_accuracy": 0.3111672278338945,
-    "feature": "num__rebounds_per_40",
-    "importance": 0.0352655597270123
-  },
-  {
-    "position": "G",
-    "model_name": "position_specific_G",
-    "algorithm": "random_forest",
-    "macro_f1": 0.3208875788094653,
-    "balanced_accuracy": 0.3111672278338945,
+    "position": "F",
     "feature": "num__rebounds",
-    "importance": 0.033781119480453
+    "importance": 0.05588259392635014,
+    "algorithm": "random_forest"
   },
   {
-    "position": "G",
-    "model_name": "position_specific_G",
-    "algorithm": "random_forest",
-    "macro_f1": 0.3208875788094653,
-    "balanced_accuracy": 0.3111672278338945,
-    "feature": "num__points",
-    "importance": 0.0337562906441703
+    "position": "F",
+    "feature": "num__rebounds_per_40",
+    "importance": 0.050223321157504636,
+    "algorithm": "random_forest"
   },
   {
-    "position": "G",
-    "model_name": "position_specific_G",
-    "algorithm": "random_forest",
-    "macro_f1": 0.3208875788094653,
-    "balanced_accuracy": 0.3111672278338945,
-    "feature": "num__personal_fouls_per_game",
-    "importance": 0.0334590242013774
-  },
-  {
-    "position": "G",
-    "model_name": "position_specific_G",
-    "algorithm": "random_forest",
-    "macro_f1": 0.3208875788094653,
-    "balanced_accuracy": 0.3111672278338945,
+    "position": "F",
     "feature": "num__rebounds_per_game",
-    "importance": 0.0334157194894097
+    "importance": 0.04766534208720177,
+    "algorithm": "random_forest"
   },
   {
-    "position": "G",
-    "model_name": "position_specific_G",
-    "algorithm": "random_forest",
-    "macro_f1": 0.3208875788094653,
-    "balanced_accuracy": 0.3111672278338945,
-    "feature": "num__personal_fouls",
-    "importance": 0.032604276656903
-  },
-  {
-    "position": "G",
-    "model_name": "position_specific_G",
-    "algorithm": "random_forest",
-    "macro_f1": 0.3208875788094653,
-    "balanced_accuracy": 0.3111672278338945,
-    "feature": "num__turnovers_per_game",
-    "importance": 0.0313799543965026
-  },
-  {
-    "position": "G",
-    "model_name": "position_specific_G",
-    "algorithm": "random_forest",
-    "macro_f1": 0.3208875788094653,
-    "balanced_accuracy": 0.3111672278338945,
-    "feature": "num__minutes",
-    "importance": 0.0310531215232642
-  },
-  {
-    "position": "G",
-    "model_name": "position_specific_G",
-    "algorithm": "random_forest",
-    "macro_f1": 0.3208875788094653,
-    "balanced_accuracy": 0.3111672278338945,
-    "feature": "num__points_per_40",
-    "importance": 0.0301637761896408
-  },
-  {
-    "position": "G",
-    "model_name": "position_specific_G",
-    "algorithm": "random_forest",
-    "macro_f1": 0.3208875788094653,
-    "balanced_accuracy": 0.3111672278338945,
-    "feature": "num__points_per_game",
-    "importance": 0.0292689461463819
-  },
-  {
-    "position": "G",
-    "model_name": "position_specific_G",
-    "algorithm": "random_forest",
-    "macro_f1": 0.3208875788094653,
-    "balanced_accuracy": 0.3111672278338945,
-    "feature": "num__assists_per_40",
-    "importance": 0.0287994631520559
-  },
-  {
-    "position": "G",
-    "model_name": "position_specific_G",
-    "algorithm": "random_forest",
-    "macro_f1": 0.3208875788094653,
-    "balanced_accuracy": 0.3111672278338945,
-    "feature": "num__turnovers",
-    "importance": 0.0285228336401238
-  },
-  {
-    "position": "G",
-    "model_name": "position_specific_G",
-    "algorithm": "random_forest",
-    "macro_f1": 0.3208875788094653,
-    "balanced_accuracy": 0.3111672278338945,
-    "feature": "num__assist_to_turnover_ratio",
-    "importance": 0.0285198741226907
-  },
-  {
-    "position": "G",
-    "model_name": "position_specific_G",
-    "algorithm": "random_forest",
-    "macro_f1": 0.3208875788094653,
-    "balanced_accuracy": 0.3111672278338945,
-    "feature": "num__usage_rate",
-    "importance": 0.0283279614921088
-  },
-  {
-    "position": "G",
-    "model_name": "position_specific_G",
-    "algorithm": "random_forest",
-    "macro_f1": 0.3208875788094653,
-    "balanced_accuracy": 0.3111672278338945,
-    "feature": "num__games_played",
-    "importance": 0.0280374025841643
-  },
-  {
-    "position": "G",
-    "model_name": "position_specific_G",
-    "algorithm": "random_forest",
-    "macro_f1": 0.3208875788094653,
-    "balanced_accuracy": 0.3111672278338945,
-    "feature": "num__blocks",
-    "importance": 0.0280360166224014
-  },
-  {
-    "position": "G",
-    "model_name": "position_specific_G",
-    "algorithm": "random_forest",
-    "macro_f1": 0.3208875788094653,
-    "balanced_accuracy": 0.3111672278338945,
-    "feature": "num__turnovers_per_40",
-    "importance": 0.0272191664619825
-  },
-  {
-    "position": "G",
-    "model_name": "position_specific_G",
-    "algorithm": "random_forest",
-    "macro_f1": 0.3208875788094653,
-    "balanced_accuracy": 0.3111672278338945,
-    "feature": "num__assists_per_game",
-    "importance": 0.0252920490946025
-  },
-  {
-    "position": "G",
-    "model_name": "position_specific_G",
-    "algorithm": "random_forest",
-    "macro_f1": 0.3208875788094653,
-    "balanced_accuracy": 0.3111672278338945,
-    "feature": "num__assists",
-    "importance": 0.0248045558391864
-  },
-  {
-    "position": "G",
-    "model_name": "position_specific_G",
-    "algorithm": "random_forest",
-    "macro_f1": 0.3208875788094653,
-    "balanced_accuracy": 0.3111672278338945,
-    "feature": "num__games_started",
-    "importance": 0.0244122530116241
-  },
-  {
-    "position": "G",
-    "model_name": "position_specific_G",
-    "algorithm": "random_forest",
-    "macro_f1": 0.3208875788094653,
-    "balanced_accuracy": 0.3111672278338945,
+    "position": "F",
     "feature": "num__log_recruiting_rank",
-    "importance": 0.0240701310139209
+    "importance": 0.04437443637991931,
+    "algorithm": "random_forest"
   },
   {
-    "position": "G",
-    "model_name": "position_specific_G",
-    "algorithm": "random_forest",
-    "macro_f1": 0.3208875788094653,
-    "balanced_accuracy": 0.3111672278338945,
+    "position": "F",
     "feature": "num__recruiting_rating",
-    "importance": 0.0223001022681133
+    "importance": 0.04270060536033397,
+    "algorithm": "random_forest"
   },
   {
-    "position": "C",
-    "model_name": "position_specific_C",
-    "algorithm": "lightgbm",
-    "macro_f1": 0.5277777777777778,
-    "balanced_accuracy": 0.7333333333333334,
-    "feature": "num__points_per_40",
-    "importance": 124.0
-  },
-  {
-    "position": "C",
-    "model_name": "position_specific_C",
-    "algorithm": "lightgbm",
-    "macro_f1": 0.5277777777777778,
-    "balanced_accuracy": 0.7333333333333334,
-    "feature": "num__points_per_game",
-    "importance": 83.0
-  },
-  {
-    "position": "C",
-    "model_name": "position_specific_C",
-    "algorithm": "lightgbm",
-    "macro_f1": 0.5277777777777778,
-    "balanced_accuracy": 0.7333333333333334,
-    "feature": "num__assists_per_40",
-    "importance": 83.0
-  },
-  {
-    "position": "C",
-    "model_name": "position_specific_C",
-    "algorithm": "lightgbm",
-    "macro_f1": 0.5277777777777778,
-    "balanced_accuracy": 0.7333333333333334,
-    "feature": "num__turnovers",
-    "importance": 83.0
-  },
-  {
-    "position": "C",
-    "model_name": "position_specific_C",
-    "algorithm": "lightgbm",
-    "macro_f1": 0.5277777777777778,
-    "balanced_accuracy": 0.7333333333333334,
-    "feature": "num__usage_rate",
-    "importance": 80.0
-  },
-  {
-    "position": "C",
-    "model_name": "position_specific_C",
-    "algorithm": "lightgbm",
-    "macro_f1": 0.5277777777777778,
-    "balanced_accuracy": 0.7333333333333334,
-    "feature": "num__blocks_per_40",
-    "importance": 78.0
-  },
-  {
-    "position": "C",
-    "model_name": "position_specific_C",
-    "algorithm": "lightgbm",
-    "macro_f1": 0.5277777777777778,
-    "balanced_accuracy": 0.7333333333333334,
-    "feature": "num__steals",
-    "importance": 74.0
-  },
-  {
-    "position": "C",
-    "model_name": "position_specific_C",
-    "algorithm": "lightgbm",
-    "macro_f1": 0.5277777777777778,
-    "balanced_accuracy": 0.7333333333333334,
-    "feature": "num__personal_fouls",
-    "importance": 60.0
-  },
-  {
-    "position": "C",
-    "model_name": "position_specific_C",
-    "algorithm": "lightgbm",
-    "macro_f1": 0.5277777777777778,
-    "balanced_accuracy": 0.7333333333333334,
-    "feature": "num__blocks",
-    "importance": 58.0
-  },
-  {
-    "position": "C",
-    "model_name": "position_specific_C",
-    "algorithm": "lightgbm",
-    "macro_f1": 0.5277777777777778,
-    "balanced_accuracy": 0.7333333333333334,
-    "feature": "num__assist_to_turnover_ratio",
-    "importance": 54.0
-  },
-  {
-    "position": "C",
-    "model_name": "position_specific_C",
-    "algorithm": "lightgbm",
-    "macro_f1": 0.5277777777777778,
-    "balanced_accuracy": 0.7333333333333334,
-    "feature": "num__assists_per_game",
-    "importance": 51.0
-  },
-  {
-    "position": "C",
-    "model_name": "position_specific_C",
-    "algorithm": "lightgbm",
-    "macro_f1": 0.5277777777777778,
-    "balanced_accuracy": 0.7333333333333334,
-    "feature": "num__rebounds_per_game",
-    "importance": 48.0
-  },
-  {
-    "position": "C",
-    "model_name": "position_specific_C",
-    "algorithm": "lightgbm",
-    "macro_f1": 0.5277777777777778,
-    "balanced_accuracy": 0.7333333333333334,
-    "feature": "num__rebounds_per_40",
-    "importance": 45.0
-  },
-  {
-    "position": "C",
-    "model_name": "position_specific_C",
-    "algorithm": "lightgbm",
-    "macro_f1": 0.5277777777777778,
-    "balanced_accuracy": 0.7333333333333334,
-    "feature": "num__games_played",
-    "importance": 44.0
-  },
-  {
-    "position": "C",
-    "model_name": "position_specific_C",
-    "algorithm": "lightgbm",
-    "macro_f1": 0.5277777777777778,
-    "balanced_accuracy": 0.7333333333333334,
-    "feature": "num__personal_fouls_per_game",
-    "importance": 39.0
-  },
-  {
-    "position": "C",
-    "model_name": "position_specific_C",
-    "algorithm": "lightgbm",
-    "macro_f1": 0.5277777777777778,
-    "balanced_accuracy": 0.7333333333333334,
-    "feature": "num__minutes",
-    "importance": 38.0
-  },
-  {
-    "position": "C",
-    "model_name": "position_specific_C",
-    "algorithm": "lightgbm",
-    "macro_f1": 0.5277777777777778,
-    "balanced_accuracy": 0.7333333333333334,
-    "feature": "num__rebounds",
-    "importance": 36.0
-  },
-  {
-    "position": "C",
-    "model_name": "position_specific_C",
-    "algorithm": "lightgbm",
-    "macro_f1": 0.5277777777777778,
-    "balanced_accuracy": 0.7333333333333334,
-    "feature": "num__turnovers_per_40",
-    "importance": 30.0
-  },
-  {
-    "position": "C",
-    "model_name": "position_specific_C",
-    "algorithm": "lightgbm",
-    "macro_f1": 0.5277777777777778,
-    "balanced_accuracy": 0.7333333333333334,
-    "feature": "num__games_started",
-    "importance": 29.0
-  },
-  {
-    "position": "C",
-    "model_name": "position_specific_C",
-    "algorithm": "lightgbm",
-    "macro_f1": 0.5277777777777778,
-    "balanced_accuracy": 0.7333333333333334,
-    "feature": "num__turnovers_per_game",
-    "importance": 29.0
-  },
-  {
-    "position": "C",
-    "model_name": "position_specific_C",
-    "algorithm": "lightgbm",
-    "macro_f1": 0.5277777777777778,
-    "balanced_accuracy": 0.7333333333333334,
-    "feature": "num__points",
-    "importance": 21.0
-  },
-  {
-    "position": "C",
-    "model_name": "position_specific_C",
-    "algorithm": "lightgbm",
-    "macro_f1": 0.5277777777777778,
-    "balanced_accuracy": 0.7333333333333334,
-    "feature": "num__minutes_per_game",
-    "importance": 20.0
-  },
-  {
-    "position": "C",
-    "model_name": "position_specific_C",
-    "algorithm": "lightgbm",
-    "macro_f1": 0.5277777777777778,
-    "balanced_accuracy": 0.7333333333333334,
-    "feature": "num__defensive_event_score",
-    "importance": 10.0
-  },
-  {
-    "position": "C",
-    "model_name": "position_specific_C",
-    "algorithm": "lightgbm",
-    "macro_f1": 0.5277777777777778,
-    "balanced_accuracy": 0.7333333333333334,
-    "feature": "num__steals_per_game",
-    "importance": 7.0
-  },
-  {
-    "position": "C",
-    "model_name": "position_specific_C",
-    "algorithm": "lightgbm",
-    "macro_f1": 0.5277777777777778,
-    "balanced_accuracy": 0.7333333333333334,
-    "feature": "num__steals_per_40",
-    "importance": 4.0
-  },
-  {
-    "position": "C",
-    "model_name": "position_specific_C",
-    "algorithm": "lightgbm",
-    "macro_f1": 0.5277777777777778,
-    "balanced_accuracy": 0.7333333333333334,
+    "position": "F",
     "feature": "num__assists",
-    "importance": 4.0
+    "importance": 0.03943260182593681,
+    "algorithm": "random_forest"
   },
   {
-    "position": "C",
-    "model_name": "position_specific_C",
-    "algorithm": "lightgbm",
-    "macro_f1": 0.5277777777777778,
-    "balanced_accuracy": 0.7333333333333334,
+    "position": "F",
+    "feature": "num__defensive_event_score",
+    "importance": 0.038658944592087775,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "F",
+    "feature": "num__assists_per_game",
+    "importance": 0.03806471736679559,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "F",
+    "feature": "num__recruiting_rank",
+    "importance": 0.036203693379709086,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "F",
+    "feature": "num__assists_per_40",
+    "importance": 0.034959624732357635,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "F",
+    "feature": "num__stock_rate_per_40",
+    "importance": 0.03271530240364638,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "F",
     "feature": "num__blocks_per_game",
-    "importance": 2.0
+    "importance": 0.03256829736806647,
+    "algorithm": "random_forest"
   },
   {
-    "position": "C",
-    "model_name": "position_specific_C",
-    "algorithm": "lightgbm",
-    "macro_f1": 0.5277777777777778,
-    "balanced_accuracy": 0.7333333333333334,
+    "position": "F",
+    "feature": "num__assist_to_turnover_ratio",
+    "importance": 0.031638154165902675,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "F",
+    "feature": "num__points",
+    "importance": 0.02970896319922411,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "F",
+    "feature": "num__blocks",
+    "importance": 0.029058089288740683,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "F",
+    "feature": "num__games_started",
+    "importance": 0.028517409552169935,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "F",
+    "feature": "num__minutes",
+    "importance": 0.02784258957141618,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "F",
+    "feature": "num__steals_per_40",
+    "importance": 0.02710271599067329,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "F",
+    "feature": "num__minutes_per_game",
+    "importance": 0.02658191292576633,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "F",
+    "feature": "num__steals",
+    "importance": 0.02586708650756675,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "F",
+    "feature": "num__personal_fouls",
+    "importance": 0.02536085229262074,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "F",
+    "feature": "num__turnovers_per_game",
+    "importance": 0.02474187671105246,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "F",
+    "feature": "num__blocks_per_40",
+    "importance": 0.024633210224573404,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "F",
+    "feature": "num__points_per_game",
+    "importance": 0.02416866558734429,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "F",
+    "feature": "num__steals_per_game",
+    "importance": 0.02389984375435699,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "F",
+    "feature": "num__points_per_40",
+    "importance": 0.02369072943665173,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "F",
+    "feature": "num__usage_rate",
+    "importance": 0.02305664351247146,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "F",
+    "feature": "num__games_played",
+    "importance": 0.021670183035423066,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "F",
+    "feature": "num__turnovers",
+    "importance": 0.020857023514775332,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "F",
+    "feature": "num__personal_fouls_per_game",
+    "importance": 0.020453679219341138,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "F",
+    "feature": "num__turnovers_per_40",
+    "importance": 0.01672164228383729,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "F",
+    "feature": "num__recruiting_stars",
+    "importance": 0.015191656373322412,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "F",
+    "feature": "cat__conference_SEC",
+    "importance": 0.006803658359798358,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "F",
+    "feature": "cat__conference_ACC",
+    "importance": 0.0025991198248553208,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "F",
+    "feature": "num__is_high_major",
+    "importance": 0.002292869262184149,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "F",
+    "feature": "cat__conference_Pac-12",
+    "importance": 0.001527314879253781,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "F",
+    "feature": "cat__conference_Big East",
+    "importance": 0.0008350847719376084,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "F",
     "feature": "cat__conference_Big Ten",
-    "importance": 0.0
+    "importance": 0.0006958196885276705,
+    "algorithm": "random_forest"
   },
   {
-    "position": "C",
-    "model_name": "position_specific_C",
-    "algorithm": "lightgbm",
-    "macro_f1": 0.5277777777777778,
-    "balanced_accuracy": 0.7333333333333334,
-    "feature": "cat__conference_MEAC",
-    "importance": 0.0
+    "position": "F",
+    "feature": "cat__conference_Big 12",
+    "importance": 0.0005021328009432734,
+    "algorithm": "random_forest"
   },
   {
-    "position": "C",
-    "model_name": "position_specific_C",
-    "algorithm": "lightgbm",
-    "macro_f1": 0.5277777777777778,
-    "balanced_accuracy": 0.7333333333333334,
-    "feature": "cat__conference_Summit",
-    "importance": 0.0
+    "position": "F",
+    "feature": "cat__conference_WAC",
+    "importance": 0.0004548114601490983,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "F",
+    "feature": "cat__conference_CUSA",
+    "importance": 4.344062937424764e-05,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "F",
+    "feature": "cat__conference_A-10",
+    "importance": 3.3340595836592186e-05,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "F",
+    "feature": "cat__conference_Sun Belt",
+    "importance": 0.0,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "F",
+    "feature": "cat__conference_Mountain West",
+    "importance": 0.0,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "F",
+    "feature": "cat__conference_OVC",
+    "importance": 0.0,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "F",
+    "feature": "cat__conference_American",
+    "importance": 0.0,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "F",
+    "feature": "cat__conference_MVC",
+    "importance": 0.0,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "F",
+    "feature": "cat__conference_MAC",
+    "importance": 0.0,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "F",
+    "feature": "cat__conference_Horizon",
+    "importance": 0.0,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "F",
+    "feature": "cat__conference_CAA",
+    "importance": 0.0,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "F",
+    "feature": "cat__conference_Big Sky",
+    "importance": 0.0,
+    "algorithm": "random_forest"
+  },
+  {
+    "position": "F",
+    "feature": "cat__conference_WCC",
+    "importance": 0.0,
+    "algorithm": "random_forest"
   }
 ]

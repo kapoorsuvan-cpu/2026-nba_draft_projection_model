@@ -30,7 +30,7 @@ def clean_draft_data(draft: pd.DataFrame | None = None) -> pd.DataFrame:
 
 
 def filter_eligible_draft_years(draft: pd.DataFrame) -> pd.DataFrame:
-    """Keep only classes with enough NBA history for first-four-year labels."""
+    """Keep only classes with an observable fifth NBA season."""
     draft = draft.copy()
     if "draft_year" not in draft.columns:
         return draft
